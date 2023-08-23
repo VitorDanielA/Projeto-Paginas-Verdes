@@ -11,12 +11,11 @@ body{
 }
 
 #containerPrincipal{
-    width: 600px;
-    height: 600px;
+    height: 550px;
     background-color: white;
 }
 
-h1{
+h2, h3{
     color: #9b79ef;
     font-weight:bolder;
 }
@@ -29,19 +28,9 @@ label{
     color: #807f7f;
 }
 
-a{
-    text-decoration: none;
-    color: #9b79ef;
-}
-
-a:hover{
-    color:#7453ec;
-}
-
 .botao{
     background-color: #9470ee;
     color: #ffffff;
-    height: 50px;
 }
 
 .botao:hover{
@@ -51,7 +40,6 @@ a:hover{
 
 .inputs_border{
     border: 1px solid #dcdcdc;
-    height: 50px;
 }
 
 .inputs_border:focus{
@@ -59,14 +47,12 @@ a:hover{
     box-shadow: 0 0 0 0;
 }
 
+form{
+    padding: 35px;
+}
+
 .bg-roxo:checked{
     border: 1px solid #ffffff;
     background-color:#9b79ef;
     box-shadow: 0 0 0 0;
 }
-
-.cadastrar, .span_margin{
-    cursor: pointer;
-    color: #9470ee;
-}
-
