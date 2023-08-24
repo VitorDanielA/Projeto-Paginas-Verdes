@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav_cor{
+    background-color: #7453ec;
+}
+
+.inputs_border:focus{
+    border: 1px solid #9b79ef;
+    box-shadow: 0 0 0 0;
+}
+
+.botao{
+    background-color: #9b79ef;
+    color: #ffffff;
+}
+
+.botao:hover{
+    background-color: #a486f1;
+    color: #ffffff;
+}
+
+i{
+   padding-top: 6px; 
+   color: #ffffff;
+}
+
+span{
+    color: #ffffff;
+}
+
+strong{
+    color: #ffffff;
+}
