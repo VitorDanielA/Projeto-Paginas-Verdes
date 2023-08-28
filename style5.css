@@ -8,13 +8,41 @@
     background-color: #7453ec;
 }
 
+.inputs_border{
+    max-width: 350px;
+}
+
 .inputs_border:focus{
     border: 1px solid #9b79ef;
     box-shadow: 0 0 0 0;
 }
 
 .botao{
-    background-color: #9b79ef;
+    background-color: #7453ec;
+    color: #ffffff;
+}
+
+.botao_form{
+    background-color: #7453ec;
+    color: #ffffff;
+    height: 38px;
+}
+
+.toggle_color{
+    color: #ffffff;
+}
+
+.inputs_width{
+    width: 300px;
+}
+
+#searchInput:focus{
+    border: 1px solid #9b79ef;
+    box-shadow: 0 0 0 0;
+}
+
+.botao_form:hover{
+    background-color: #a486f1;
     color: #ffffff;
 }
 
@@ -32,6 +60,35 @@ span{
     color: #ffffff;
 }
 
-strong{
+.strong_title{
     color: #ffffff;
+    font-size: 30px;
+}
+
+.label_search{
+    font-size: 15px;
+    color: #676666;
+}
+
+.container_color{
+    background-color: #e5e5e5;
+}
+
+.title-padding{
+    padding-left: 60px;
+}
+
+.menu-padding {
+    padding-right: 20px;
+}
+
+.footer_color{
+    background-color: #7453ec;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 330px) {
+    .title-padding{
+        padding-left: 1px;
+    }
 }
