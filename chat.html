@@ -48,21 +48,21 @@
       </nav>
 
       <div class="container" style="background-color: #f3f3f3; padding: 20px;">
-        <h1 class="text-center mt-5">Chat Green Pages</h1>
+        <h1 class="text-center mt-5" style="color: #7453ec;">Chat Green Pages</h1>
         <div class="row mt-4">
             <div class="col-md-3">
                 <!-- Início da seção de contatos -->
                 <div class="contacts">
-                    <h3>Contatos</h3>
+                    <h3 style="color: #7453ec;">Contatos</h3>
                     <!-- Contato 1 - Em Chat (Destaque) -->
                     <div class="contact" style="background-color: #7453ec; color: #fff; border-radius: 5px; padding: 5px;">
                         <img src="./assets/pexels-andrea-piacquadio-3779705.jpg" alt="Joan Rodrigues" class="rounded-circle" width="50px" style="border: 2px solid #fff;">
-                        <span style="color: #000;">Joan Rodrigues</span>
+                        <span style="color: #ffffff;">Joan Rodrigues</span>
                     </div>
                     <!-- Contato 2 (Não em Chat) -->
                     <div class="contact" style="background-color: #f3f3f3; border-radius: 5px; padding: 5px;">
                         <img src="./assets/pexels-trần-hồng-công-10383580.jpg" alt="Luis Oliveira" class="rounded-circle" width="50px">
-                        <span style="color: #000;">Luis Oliveira</span>
+                        <span style="color: #7453ec;">Luis Oliveira</span>
                     </div>
                     <!-- Adicione mais contatos aqui -->
                 </div>
@@ -80,33 +80,35 @@
                     <!-- Fim do cabeçalho -->
     
                     <div class="chat-message rounded p-3 mb-2" style="background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                        <div class="avatar">
-                            <img src="./assets/pexels-caleb-oquendo-7772528.jpg" alt="Você" class="rounded-circle" width="30px">
+                        <div class="avatar d-flex">
+                            <img src="./assets/pexels-caleb-oquendo-7772528.jpg" alt="Você" class="rounded-circle" style="width: 30px; height: 30px; margin-right: 9px;">
+
+                            <p><strong>Você:</strong> Olá, temos uma oferta especial de serviços hoje!</p>
                         </div>
                         <div class="message" style="margin-left: 40px;">
-                            <p><strong>Você:</strong> Olá, temos uma oferta especial de serviços hoje!</p>
                             <div class="message-details text-muted small">
                                 10:30
                             </div>
                         </div>
                     </div>
                     <div class="chat-message rounded p-3 mb-2" style="background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                        <div class="avatar">
-                            <img src="./assets/pexels-andrea-piacquadio-3779705.jpg" alt="Joan Rodrigues" class="rounded-circle" width="30px">
+                        <div class="avatar d-flex">
+                            <img src="./assets/pexels-andrea-piacquadio-3779705.jpg" alt="Joan Rodrigues" class="rounded-circle" style="width: 30px; height: 30px; margin-right: 9px;">
+
+                            <p><strong>Joan Rodrigues:</strong> Ótimo! Pode me contar mais sobre a oferta?</p>
                         </div>
                         <div class="message" style="margin-left: 40px;">
-                            <p><strong>Joan Rodrigues:</strong> Ótimo! Pode me contar mais sobre a oferta?</p>
-                            <div class="message-details text-muted small">
-                                10:35
-                            </div>
+                          <div class="message-details text-muted small">
+                            10:35
+                          </div>
                         </div>
                     </div>
                     <!-- Adicione mais mensagens aqui -->
                 </div>
                 <div class="input-group mt-3">
-                    <input type="text" class="form-control" placeholder="Digite sua mensagem...">
+                    <input type="text" class="form-control form_focus" placeholder="Digite sua mensagem...">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="button" style="background-color: #7453ec;">Enviar</button>
+                        <button class="btn botao" type="button" style="background-color: #7453ec;">Enviar</button>
                     </div>
                 </div>
             </div>
