@@ -69,17 +69,15 @@
                 <!-- Fim da seção de contatos -->
             </div>
             <div class="col-md-6 offset-md-3">
-                <div class="chat-box">
-                    <!-- Início do cabeçalho com o nome e o avatar do interlocutor -->
-                    <div class="text-center mb-3" style="background-color: #7453ec; color: #fff; border-radius: 5px; padding: 10px;">
+                <div class="text-center mb-3" style="background-color: #7453ec; color: #fff; border-radius: 5px; padding: 10px;">
                         <div style="display: inline-block; padding: 5px; border-radius: 5px;">
                             <img src="./assets/pexels-andrea-piacquadio-3779705.jpg" alt="Joan Rodrigues" class="rounded-circle" width="50px" style="border: 2px solid #fff;">
                         </div>
                         <h4 style="display: inline-block; margin-left: 10px;">Joan Rodrigues</h4>
-                    </div>
-                    <!-- Fim do cabeçalho -->
-    
-                    <div class="chat-message rounded p-3 mb-2" style="background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                  </div>
+                <div class="chat-box" style="overflow-y:scroll;max-height: 60vh;">
+                  
+                    <div class="chat-message rounded p-3 mb-2" style="background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);" >
                         <div class="avatar d-flex">
                             <img src="./assets/pexels-caleb-oquendo-7772528.jpg" alt="Você" class="rounded-circle" style="width: 30px; height: 30px; margin-right: 9px;">
 
@@ -103,7 +101,7 @@
                           </div>
                         </div>
                     </div>
-                    <!-- Adicione mais mensagens aqui -->
+                    
                 </div>
                 <div class="input-group mt-3">
                     <input type="text" class="form-control form_focus" placeholder="Digite sua mensagem...">
@@ -124,5 +122,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const messageInput = document.querySelector(".form-control");
+        const chatBox = document.querySelector(".chat-box");
+    
+        document.querySelector(".botao").addEventListener("click", function () {
+          const messageText = messageInput.value.trim();
+    
+          if (messageText !== "") {
+            const currentTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    
+            const messageHTML = `
+              <div class="chat-message rounded p-3 mb-2" style="background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                <div class="avatar d-flex">
+                  <img src="./assets/pexels-caleb-oquendo-7772528.jpg" alt="Você" class="rounded-circle" style="width: 30px; height: 30px; margin-right: 9px;">
+                  <p><strong>Você:</strong> ${messageText}</p>
+                </div>
+                <div class="message" style="margin-left: 40px;">
+                  <div class="message-details text-muted small">${currentTime}</div>
+                </div>
+              </div>
+            `;
+    
+            chatBox.insertAdjacentHTML("beforeend", messageHTML);
+            messageInput.value = ""; // Limpar o campo de entrada após o envio da mensagem
+            
+            chatBox.scrollTop = chatBox.scrollHeight;
+          }
+        });
+    
+        // Permitir o envio da mensagem pressionando a tecla "Enter"
+        messageInput.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault(); // Impedir que a tecla "Enter" quebre a linha
+            document.querySelector(".botao").click(); // Simular um clique no botão "Enviar"
+          }
+        });
+      });
+    </script>
 </body>
 </html>
