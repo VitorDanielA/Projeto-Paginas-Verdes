@@ -1,4 +1,4 @@
-const HOST = 'http://localhost:8085/'
+const HOST = 'http://'+window.location.hostname+':8085/'
 //const HOST = 'https://tarciiz-saude-server.loca.lt/'
 
 const API = 'webservice/'
