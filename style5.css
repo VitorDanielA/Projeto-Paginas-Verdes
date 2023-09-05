@@ -205,6 +205,11 @@ span{
     border-radius: 0px 10px 10px 10px;
 }
 
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control, .input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select, .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating){
+    width: 70%;
+    height: inherit;
+}
+
 
 .message p{
     margin: 0;
@@ -225,4 +230,11 @@ span{
     .container_secundario{
         width: 260px;
     }
+}
+
+.emoji {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Espaço entre o input e o emoji */
+    cursor: pointer;
 }
