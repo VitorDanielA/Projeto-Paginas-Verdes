@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #7453ec;
+    background-color: #4CAF50;
     height: 100vh;
     width: 100vw;
     color: #ffffff;
@@ -30,18 +30,18 @@ i{
 
 .botao{
     background-color: #ffffff;
-    color: #7453ec;
+    color: #4CAF50;
     font-weight: 800;
     
 }
 
 .botao:hover{
     background-color: #e9e6f5;
-    color: #7453ec;
+    color: #4CAF50;
 }
 
 .inputs_border:focus{
-    border: 1px solid #9b79ef;
+    border: 1px solid #4CAF50;
     box-shadow: 0 0 0 0;
 }
 

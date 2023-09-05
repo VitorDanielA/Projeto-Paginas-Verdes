@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #7453ec;
+    background-color: #4CAF50;
     height: 100vh;
     width: 100vw;
 }
@@ -17,17 +17,17 @@ body{
 }
 
 h2, h3{
-    color: #9b79ef;
+    color: #4CAF50;
     font-weight:bolder;
 }
 
 .botao{
-    background-color: #9470ee;
+    background-color: #4CAF50;
     color: #ffffff;
 }
 
 .botao:hover{
-    background-color:#7453ec;
+    background-color:#4CAF50;
     color: #ffffff;
 }
 

@@ -5,7 +5,7 @@
 }
 
 .nav_cor{
-    background-color: #7453ec;
+    background-color: #4CAF50;
 }
 
 .inputs_border{
@@ -13,23 +13,23 @@
 }
 
 .inputs_border:focus{
-    border: 1px solid #9b79ef;
+    border: 1px solid #4CAF50;
     box-shadow: 0 0 0 0;
 }
 
 .botao{
-    background-color: #7453ec;
+    background-color: #4CAF50;
     color: #ffffff;
 }
 
 .botao_form{
-    background-color: #7453ec;
+    background-color: #4CAF50;
     color: #ffffff;
     height: 38px;
 }
 
 .bordas_botoes{
-    border: #7453ec;
+    border: #4CAF50;
 }
 
 .toggle_color{
@@ -41,17 +41,17 @@
 }
 
 #searchInput:focus{
-    border: 1px solid #9b79ef;
+    border: 1px solid #4CAF50;
     box-shadow: 0 0 0 0;
 }
 
 .botao_form:hover{
-    background-color: #a486f1;
+    background-color: #3498DB;
     color: #ffffff;
 }
 
 .botao:hover{
-    background-color: #a486f1;
+    background-color: #3498DB;
     color: #ffffff;
 }
 
@@ -107,12 +107,12 @@ span{
 }
 
 .footer_color{
-    background-color: #7453ec;
+    background-color: #4CAF50;
     color: #ffffff;
 }
 
 .form_focus:focus{
-    border: 1px solid #9b79ef;
+    border: 1px solid #4CAF50;
     box-shadow: 0 0 0 0;
 }
 
@@ -131,6 +131,90 @@ span{
     .container_secundario{
         width: 340px;
     }
+}
+
+.profissional{
+    display: flex;
+}
+.profissional img{
+    height: fit-content;
+    width: fit-content;
+    margin-right: 30px;
+}
+
+.contacts{
+    width: 40%;
+}
+
+.chat-content{
+    border: #676666 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    width: 60%;
+}
+
+.chat-content-contact{
+    display: flex;
+    align-items: center;
+    background-color: #4CAF50; 
+    color: #fff; 
+    border-radius: 5px; 
+    padding: 10px;
+}
+
+.chat-content-contact-pic{
+    display: inline-block; 
+    padding: 5px; 
+    border-radius: 5px;
+}
+
+.chat-content-contact-name{
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+
+.my-chat-message .avatar, .other-chat-message .avatar{
+    width: 30px; 
+    height: 30px; 
+    margin-right: 9px;
+}
+
+.my-chat-message {
+    align-items: end;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.my-chat-message .message{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    
+    border-radius: 10px 10px 0px 10px;
+}
+
+.other-chat-message {
+    justify-self: start;
+    display: flex;
+}
+
+.other-chat-message .message{
+    
+    border-radius: 0px 10px 10px 10px;
+}
+
+
+.message p{
+    margin: 0;
+}
+.message {
+    margin: 0;
+    background-color: #4CAF50;
+    padding: 15px;
+    max-width: 80%;
+    min-width: 80%;
 }
 
 @media screen and (max-width: 280px) {

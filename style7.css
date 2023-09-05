@@ -5,7 +5,7 @@
 }
 
 .nav_cor{
-    background-color: #7453ec;
+    background-color: #4CAF50;
 }
 
 .title-padding{
@@ -35,12 +35,12 @@ span{
 }
 
 .botao{
-    background-color:#7453ec;
+    background-color:#4CAF50;
     color: #ffffff;
 }
 
 .botao:hover{
-    background-color: #9470ee;
+    background-color: #4CAF50;
     color: #ffffff;
 }
 
@@ -58,7 +58,7 @@ i.bi.bi-person.icone::before{
 
 .container_1{
     font-size: large;
-    background-color: #7453ec;
+    background-color: #4CAF50;
     color: #ffffff;
     border-radius: 8px;
     width: 780px;
@@ -66,17 +66,17 @@ i.bi.bi-person.icone::before{
 
 .container_1 .botao{
     background-color: #ffffff;
-    color: #7453ec;
+    color: #4CAF50;
     margin-bottom: 20px;
 }
 
 .container_1 .botao:hover{
     background-color: #d1d0d0;
-    color:  #7453ec;
+    color:  #4CAF50;
 }
 
 .container_1 .botao i{
-    color: #7453ec;
+    color: #4CAF50;
 }
 
 .container_1 h1{
@@ -94,7 +94,7 @@ i{
 }
 
 .inputs_border:focus{
-    border: 1px solid #9b79ef;
+    border: 1px solid #4CAF50;
     box-shadow: 0 0 0 0;
 }
 
@@ -103,7 +103,7 @@ i{
 }
 
 .container_primario span{
-    color:#7453ec;
+    color:#4CAF50;
     font-size: 16px;
 }
 
