@@ -10,21 +10,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="body align-items-center d-flex">
     
     <div class="container rounded-2" id="containerPrincipal">
-        <form class="p-5" action="homescreen.html">
+        <div class="p-5">
             <h1 class="text-center">Login</h1>
             <p>Seja bem vindo, encontre aqui prestadores de serviços ou venha ser um também.</p>
             <div class="my-1">
                 <label class="form-label">Nome de Usuário</label>
-                <input type="text" class="form-control inputs_border" name="f_nome">
+                <input type="text" class="form-control inputs_border" id="username" name="f_nome">
             </div>
 
             <div class="my-3">
                 <label class="form-label">Senha</label>
-                <input type="password" class="form-control inputs_border" name="f_senha">
+                <input type="password" class="form-control inputs_border" id="password" name="f_senha">
             </div>
 
             <div class="form-check my-2">
@@ -35,21 +36,39 @@
             </div>
 
             <div class="my-3">
-                <a href="homescreen.html">
-                    <input type="submit" class="btn botao container-fluid" name="btn_enviar" value="ACESSAR">
-                </a>
+                <button type="submit" class="btn botao container-fluid" onClick="makeLogin()" name="btn_enviar">ACESSAR</button>
             </div>
 
             <div class="my-4 d-flex justify-content-between">
                 <p>Novo usuário?<strong class="cadastrar"><a href="escolha.html"> Cadastre-se</a></strong></p>
                 <p class="cadastrar"><a href="esqueceuSenha.html">Esqueceu a senha?</a></p>
             </div>
-        </form>
+        </div>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
+
+    <script src="./js/session.js"></script>
+    <script src="./js/requisitions.js"></script>
+    
+
+    <script>
+        
+        function makeLogin(){
+            let username = $("#username").val()
+            let password = $("#password").val()
+
+            login_user(username, password).then(user=>{
+                setUser(user)
+
+                window.location.href = './homescreen.html'
+            }).catch(error=>{
+                console.log('Error ', error)
+            })
+        }
+    </script>
 </body>
 </html>
