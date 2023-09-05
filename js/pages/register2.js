@@ -24,6 +24,8 @@ function cadastrar(){
 
     post('user/save', newUser).then(success=>{
         console.log('Success ', success)
+
+        window.location.reload()
     }).catch(error=>{
         console.log('Error' , error)
     })
