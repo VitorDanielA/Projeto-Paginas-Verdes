@@ -142,85 +142,6 @@ span{
     margin-right: 30px;
 }
 
-.contacts{
-    width: 40%;
-}
-
-.chat-content{
-    border: #676666 1px solid;
-    border-radius: 10px;
-    padding: 10px;
-    width: 60%;
-}
-
-.chat-content-contact{
-    display: flex;
-    align-items: center;
-    background-color: #4CAF50; 
-    color: #fff; 
-    border-radius: 5px; 
-    padding: 10px;
-}
-
-.chat-content-contact-pic{
-    display: inline-block; 
-    padding: 5px; 
-    border-radius: 5px;
-}
-
-.chat-content-contact-name{
-    font-size: 24px;
-    padding-left: 10px;
-}
-
-
-.my-chat-message .avatar, .other-chat-message .avatar{
-    width: 30px; 
-    height: 30px; 
-    margin-right: 9px;
-}
-
-.my-chat-message {
-    align-items: end;
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.my-chat-message .message{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    
-    border-radius: 10px 10px 0px 10px;
-}
-
-.other-chat-message {
-    justify-self: start;
-    display: flex;
-}
-
-.other-chat-message .message{
-    
-    border-radius: 0px 10px 10px 10px;
-}
-
-.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control, .input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select, .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating){
-    width: 70%;
-    height: inherit;
-}
-
-
-.message p{
-    margin: 0;
-}
-.message {
-    margin: 0;
-    background-color: #4CAF50;
-    padding: 15px;
-    max-width: 80%;
-    min-width: 80%;
-}
 
 @media screen and (max-width: 280px) {
     .container_profile{
@@ -230,11 +151,4 @@ span{
     .container_secundario{
         width: 260px;
     }
-}
-
-.emoji {
-    display: flex;
-    align-items: center;
-    margin-left: 10px; /* Espaço entre o input e o emoji */
-    cursor: pointer;
 }

@@ -1,4 +1,4 @@
-const HOST = 'http://'+window.location.hostname+':8085/'
+const HOST = 'http://'+(window.location.hostname||'localhost')+':8085/'
 //const HOST = 'https://tarciiz-saude-server.loca.lt/'
 
 const API = 'webservice/'
@@ -12,7 +12,7 @@ const headers = {
 
  async function get(endpoint){
     try{
-        const fetched = await fetch(HOST+API+endpoint, {method:'GET', headers: headers})
+        const response = await fetch(HOST+API+endpoint, {method:'GET', headers: headers})
         
         if (!response.ok) {
             throw await response.text()
@@ -32,8 +32,8 @@ const headers = {
      try{
         let url = HOST+API+endpoint+'?'+params.join('&')
         console.log('url', url)
-         const fetched = await fetch(url, {method:'GET', headers: headers})
-         console.log('fecthed ', fetched)
+         const response = await fetch(url, {method:'GET', headers: headers})
+         console.log('fecthed ', response)
         
          if (!response.ok) {
             throw await response.text()
