@@ -1,5 +1,5 @@
 const HOST = 'http://'+(window.location.hostname||'localhost')+':8085/'
-//const HOST = 'https://tarciiz-saude-server.loca.lt/'
+// const HOST = 'https://paginasverdes-server.serveo.net/'
 
 const API = 'webservice/'
 
