@@ -18,6 +18,7 @@ function cadastrar(){
     newUser.address.street = $("[name='rua']").val()
     newUser.address.neighborhood = $("[name='bairro']").val()
     newUser.address.number = 's/n'
+    newUser.userType = 'Padrão'
 
 
     console.log('user ', newUser)
