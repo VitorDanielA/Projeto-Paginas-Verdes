@@ -31,6 +31,17 @@ span {
   font-size: 18px;
 }
 
+.botaoFalar{
+  background-color: #4fa387;
+  border: #4fa387;
+  color: #ffffff;
+}
+
+.botaoFalar:hover{
+  background-color: #67a08d;
+  color: #ffffff;
+}
+
 .bg_container {
   background-color: rgb(247, 246, 246);
 }
@@ -63,11 +74,31 @@ label {
 }
 
 .botao:hover {
-  background-color: #77b179;
+  background-color: #67a08d;
   color: #ffffff;
 }
 
 .footer_color {
   background-color: #4fa387;
+  color: #ffffff;
+}
+
+.corDaltonismo{
+  background-color: #4fa387;
+  color: #ffffff;
+}
+
+.corDaltonismo:hover{
+  background-color: #67a08d;
+  color: #ffffff;
+}
+
+.corPadrao{
+  background-color: #00008B;
+  color: #ffffff;
+}
+
+.corPadrao:hover{
+  background-color: #19198b;
   color: #ffffff;
 }
