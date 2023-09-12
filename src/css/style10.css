@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav_cor {
+  background-color: #4fa387;
+}
+
+.toggle_color {
+  color: #ffffff;
+}
+
+.menu-padding {
+  padding-right: 20px;
+}
+
+.bi-person-fill::after {
+  margin-bottom: 2px;
+}
+
+.bi-person-fill::before {
+  margin-bottom: 2px;
+}
+
+i {
+  padding-top: 6px;
+  color: #ffffff;
+}
+
+span {
+  color: #ffffff;
+}
+
+.strong_title {
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.font_size {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.bg-roxo:checked {
+  border: 1px solid #ffffff;
+  background-color: #4fa387;
+  box-shadow: 0 0 0 0;
+}
+
+.inputs_border:focus {
+  border: 1px solid #4fa387;
+  box-shadow: 0 0 0 0;
+}
+
+.largura_textarea {
+  max-width: 90%;
+}
+
+.botao {
+  background-color: #4fa387;
+  color: #ffffff;
+}
+
+.botao:hover {
+  background-color: #77b379;
+  color: #ffffff;
+}
+
+.botao_margin {
+  margin-top: 145px;
+  width: 150px;
+  height: 40px;
+}
+
+.footer_color {
+  background-color: #4fa387;
+  color: #ffffff;
+}
+
+.nome {
+  display: flex;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 330px) {
+  .title-padding {
+    padding-left: 1px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .strong_title {
+    display: none;
+  }
+  .nome::after {
+    display: block;
+    content: "PV";
+    color: #ffffff;
+    font-size: 30px;
+    text-decoration: none;
+  }
+}

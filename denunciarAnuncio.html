@@ -1,120 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Denunciar Anúncio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style10.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="icon" href="./assets/ico.ico" type="image/x-icon">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="src/css/style10.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg nav_cor p-3">
-        <div class="container-fluid">
-          <a class="nome"><strong></strong></a>
-          <a class="navbar-brand title-padding" href="#"><strong class="strong_title">Páginas Verdes</strong></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon toggle_color"></span>
-          </button>
-          <div class="navbar-collapse collapse m-lg-2" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-lg-0 menu-padding">
-              <li class="nav-item d-flex">
-                <i class="bi bi-person icone"></i>
-                <a class="nav-link" href="perfil.html" aria-disabled="true"><span class="menu-padding nome_usuario">Carlos Brito</span></a>
-                </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="contato.html"><span class="menu-padding">Contato</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="chat.html"><span class="menu-padding">Chat</span></a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span>Anúncios</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Meus anúncios</a></li>
-                  <li><a class="dropdown-item" href="#">Adicionar anúncio</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Reportar anúncio</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <a class="nome"><strong></strong></a>
+        <a class="navbar-brand title-padding" href="#"
+          ><strong class="strong_title">Páginas Verdes</strong></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon toggle_color"></span>
+        </button>
+        <div
+          class="navbar-collapse collapse m-lg-2"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav ms-auto mb-lg-0 menu-padding">
+            <li class="nav-item d-flex">
+              <i class="bi bi-person icone"></i>
+              <a class="nav-link" href="perfil.html" aria-disabled="true"
+                ><span class="menu-padding nome_usuario">Carlos Brito</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="contato.html"
+                ><span class="menu-padding">Contato</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chat.html"
+                ><span class="menu-padding">Chat</span></a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span>Anúncios</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Meus anúncios</a></li>
+                <li><a class="dropdown-item" href="#">Adicionar anúncio</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Reportar anúncio</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <div class="container mt-4">
-        <p>
-            <strong class="font_size">Sua experiência é importante para nós, e nosso objetivo é que os anúncios sejam úteis e confiáveis. Informe o que há de errado com esse anúncio ou profissional.</strong>
-        </p>
+      <p>
+        <strong class="font_size"
+          >Sua experiência é importante para nós, e nosso objetivo é que os
+          anúncios sejam úteis e confiáveis. Informe o que há de errado com esse
+          anúncio ou profissional.</strong
+        >
+      </p>
     </div>
 
     <div class="container container_checkbox">
-        <div class="form-check my-2">
-            <input class="form-check-input bg-roxo" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              O anúncio é falso ou enganoso
-              <p>(Declarações ou ofertas falsas, falsificação de identidade, phishing, clickbait, informações de preços incorretas).</p>
-            </label>
-        </div>
+      <div class="form-check my-2">
+        <input
+          class="form-check-input bg-roxo"
+          type="checkbox"
+          value=""
+          id="flexCheckChecked"
+          checked
+        />
+        <label class="form-check-label" for="flexCheckChecked">
+          O anúncio é falso ou enganoso
+          <p>
+            (Declarações ou ofertas falsas, falsificação de identidade,
+            phishing, clickbait, informações de preços incorretas).
+          </p>
+        </label>
+      </div>
     </div>
 
     <div class="container container_checkbox">
-        <div class="form-check my-2">
-            <input class="form-check-input bg-roxo" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              É desrespeitoso ou contém linguagem inadequada
-              <p>(Palavras de baixo escalão, comportamento inadequado).</p>
-            </label>
-        </div>
+      <div class="form-check my-2">
+        <input
+          class="form-check-input bg-roxo"
+          type="checkbox"
+          value=""
+          id="flexCheckChecked"
+          checked
+        />
+        <label class="form-check-label" for="flexCheckChecked">
+          É desrespeitoso ou contém linguagem inadequada
+          <p>(Palavras de baixo escalão, comportamento inadequado).</p>
+        </label>
+      </div>
     </div>
 
     <div class="container container_checkbox">
-        <div class="form-check my-2">
-            <input class="form-check-input bg-roxo" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Anúncio de serviço ou produto restrito
-              <p>(Bebidas alcoólicas, tabaco, jogos de azar, serviços sexuais, nudez).</p>
-            </label>
-        </div>
+      <div class="form-check my-2">
+        <input
+          class="form-check-input bg-roxo"
+          type="checkbox"
+          value=""
+          id="flexCheckChecked"
+          checked
+        />
+        <label class="form-check-label" for="flexCheckChecked">
+          Anúncio de serviço ou produto restrito
+          <p>
+            (Bebidas alcoólicas, tabaco, jogos de azar, serviços sexuais,
+            nudez).
+          </p>
+        </label>
+      </div>
     </div>
 
     <div class="container container_checkbox">
-        <div class="form-check my-2">
-            <input class="form-check-input bg-roxo" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Outro problema
-            </label>
-        </div>
+      <div class="form-check my-2">
+        <input
+          class="form-check-input bg-roxo"
+          type="checkbox"
+          value=""
+          id="flexCheckChecked"
+          checked
+        />
+        <label class="form-check-label" for="flexCheckChecked">
+          Outro problema
+        </label>
+      </div>
     </div>
 
     <div class="container d-flex">
-        
-        <div class="my-3" style="width: 700px;">
-            <label class="form-label">Comentário*</label>
-            <textarea class="form-control inputs_border largura_textarea" rows="6" placeholder="Digite a sua mensagem"></textarea>
-            <label class="form-label mt-1">Forneça o máximo de detalhes e precisão possível, mas não compartilhe <br> informações sensíveis.</label>
-        </div>
-        
-        <div class="my-4">
-            <a type="submit" class="btn botao botao_margin" href="homescreen.html" name="btn_enviar">Enviar</a> 
-        </div>
+      <div class="my-3" style="width: 700px">
+        <label class="form-label">Comentário*</label>
+        <textarea
+          class="form-control inputs_border largura_textarea"
+          rows="6"
+          placeholder="Digite a sua mensagem"
+        ></textarea>
+        <label class="form-label mt-1"
+          >Forneça o máximo de detalhes e precisão possível, mas não compartilhe
+          <br />
+          informações sensíveis.</label
+        >
+      </div>
+
+      <div class="my-4">
+        <a
+          type="submit"
+          class="btn botao botao_margin"
+          href="homescreen.html"
+          name="btn_enviar"
+          >Enviar</a
+        >
+      </div>
     </div>
 
     <footer class="text-center footer_color py-3 mt-4">
-        <div class="container">
-          <small>Páginas Verdes &copy; 2023</small>
-        </div>
+      <div class="container">
+        <small>Páginas Verdes &copy; 2023</small>
+      </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
