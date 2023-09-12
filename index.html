@@ -64,11 +64,11 @@
 
             login_user(username, password).then(user=>{
                 setUser(user)
+                showToast('Login bem sucedido!', `Bem vindo, ${user.name}!`, 'success', 'bi bi-check-circle-fill')
 
                 window.location.href = './homescreen.html'
             }).catch(error=>{
-                console.log('Error ', error)
-                alert("erro " + error)
+                showToast('Erro ao fazer login', error, 'danger', 'bi bi-bug-fill')
             })
         }
     </script>

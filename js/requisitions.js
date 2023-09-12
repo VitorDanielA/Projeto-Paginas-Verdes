@@ -107,3 +107,40 @@ const headers = {
         throw error;
     }
   }
+
+  function showToast(title, message, type, bi_icon) {
+    let types = ["primary", "secondary", "success", "info", "warning", "danger","light", "dark"]
+    
+    // Crie um elemento de toast
+    var toast = document.createElement('div');
+    toast.className = 'toast '+(types.includes(type) ? 'bg-'+type : '');
+    toast.style.position = 'absolute';
+    toast.style.top = '10%';
+    toast.style.left = '50%';
+    toast.style.transform = 'translate(-50%, -50%)';
+    toast.innerHTML = `
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        ${
+            title ? 
+            `<div class="toast-header">
+                <i class="${bi_icon}"></i>
+                &nbsp;
+                <strong class="mr-auto">${title}</strong>
+            </div>`
+            :''
+        }
+        
+        <div class="toast-body">
+            ${message}
+        </div>
+    `;
+
+    // Adicione o toast à página
+    document.body.appendChild(toast);
+
+    // Inicialize o toast usando o Bootstrap
+    var bootstrapToast = new bootstrap.Toast(toast);
+
+    // Mostre o toast
+    bootstrapToast.show();
+}
