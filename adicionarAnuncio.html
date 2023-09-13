@@ -77,7 +77,7 @@
                 <li><a class="dropdown-item" href="#">Meus anúncios</a></li>
                 <li><a class="dropdown-item" href="#">Adicionar anúncio</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Reportar anúncio</a></li>
+                <li><a class="dropdown-item" href="denunciarAnuncio.html">Reportar anúncio</a></li>
               </ul>
             </li>
           </ul>
@@ -85,12 +85,20 @@
       </div>
     </nav>
 
-    <div class="container my-5">
-        <h4 class="text-end">Modo Daltonismo</h4>
+    <div class="container my-5 d-flex justify-content-between container_acess">
+      <div>
+        <h4 class="p-1">Acessibilidade</h4>
+        <audio id="audioPlayer" controls>
+          <source src="assets/mp3-output-ttsfree(dot)com.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div>
+        <h4 class="text-end modo_daltonismo">Modo Daltonismo</h4>
         <div class="btn-group float-end mb-5" role="group" aria-label="Toggle">
             <button type="button" class="btn btn-secondary" id="onButton">On</button>
             <button type="button" class="btn corDaltonismo" id="offButton">Off</button>
         </div>
+      </div>
     </div>
 
     <div class="container bg_container d-flex align-items-center justify-content-center mt-5">
@@ -116,7 +124,8 @@
           <div class="mt-3">
             <div class="row">
               <div class="col-6">
-                <label class="">Anexo de fotos/vídeos</label>
+                <label class="label_anexo"></label>
+                <label class="label_foto">Anexo de fotos/vídeos</label>
                 <input type="file" class="form-control inputs_border" />
               </div>
               <div class="col-6">

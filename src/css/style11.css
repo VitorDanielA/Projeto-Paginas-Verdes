@@ -102,3 +102,51 @@ label {
   background-color: #19198b;
   color: #ffffff;
 }
+
+.container_acess{
+  background-color: #fdfdfd;
+}
+
+.nome {
+  display: flex;
+  text-decoration: none;
+}
+
+.label_anexo{
+  display: flex;
+}
+
+@media screen and (max-width: 450px) {
+
+  .container_acess{
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  .modo_daltonismo{
+    margin-top: 50px;
+  }
+
+  .strong_title {
+    display: none;
+  }
+
+  .nome::after {
+    display: block;
+    content: "PV";
+    color: #ffffff;
+    font-size: 30px;
+    text-decoration: none;
+  }
+
+  .label_foto{
+    display: none;
+  }
+
+  .label_anexo::after{
+    display: block;
+    content: "Anexo";
+    color: #807f7f;
+    text-decoration: none;
+  }
+}
