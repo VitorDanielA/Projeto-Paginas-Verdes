@@ -177,9 +177,10 @@
     <script src="./js/requisitions.js"></script>
 
     <script>
+      
+
       function gotoChat(){
-        //aqui irá o id do profissional selecionado
-        let otherid = 'f0658e3b-e9ed-4a81-8302-cf6232df7580'; 
+        let otherid = getParameterFromUrl('id'); 
         let chatLoc = 'chat.html'
 
         get('chatbetween/find/user/'+getUser().id+'/'+otherid).then(cb=>{

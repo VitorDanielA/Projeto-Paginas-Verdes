@@ -1,5 +1,5 @@
 const HOST = 'http://'+(window.location.hostname||'localhost')+':8085/'
-// const HOST = 'https://paginasverdes-server.serveo.net/'
+// const HOST = 'https://paginasverdes-web.serveo.net/'
 
 const API = 'webservice/'
 
@@ -143,4 +143,11 @@ const headers = {
 
     // Mostre o toast
     bootstrapToast.show();
+}
+
+function getParameterFromUrl(param){
+    var queryString = (window.location.search)
+    var searchParams = new URLSearchParams(queryString);
+    return searchParams.get(param);
+    
 }
