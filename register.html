@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="src/css/style2.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
@@ -21,7 +23,7 @@
   </head>
   <body class="body align-items-center d-flex">
     <div class="container rounded-2" id="containerPrincipal">
-      <form>
+      <div>
         <div>
           <h2 class="text-center">Cadastro de usuário</h2>
           <p class="text-center">
@@ -35,6 +37,7 @@
             <label class="">Nome Completo</label>
             <input
               type="text"
+              name="nome_completo"
               class="form-control inputs_border"
               placeholder="Digite seu nome completo"
             />
@@ -43,6 +46,7 @@
             <label class="">Email</label>
             <input
               type="email"
+              name="email"
               class="form-control inputs_border"
               placeholder="Digite seu email"
             />
@@ -54,6 +58,7 @@
             <label class="">Telefone</label>
             <input
               type="tel"
+              name="telefone"
               class="form-control inputs_border"
               placeholder="Ex.: 99 99999999"
             />
@@ -62,17 +67,22 @@
             <label class="">CPF</label>
             <input
               type="text"
+              name="cpf"
               class="form-control inputs_border"
               placeholder="Ex.: 99999999999"
             />
           </div>
           <div class="col-3">
             <label class="">Data de Nascimento</label>
-            <input type="date" class="form-control inputs_border" />
+            <input type="date" name="data_nascimento" class="form-control inputs_border" />
           </div>
           <div class="col-3">
             <label class="">Trabalho formal ou informal</label>
-            <input type="text" class="form-control inputs_border" />
+
+            <select class="form-select" name="trabalho">
+              <option class="form-control" value="Formal">Formal</option>
+              <option class="form-control" value="Informal">Informal</option>
+            </select>
           </div>
         </div>
 
@@ -82,6 +92,7 @@
             <input
               type="text"
               class="form-control inputs_border"
+              name="rua"
               placeholder="Ex.: Irecê, Rua das Flores, 15"
             />
           </div>
@@ -89,6 +100,7 @@
             <label class="">Profissão</label>
             <input
               type="text"
+              name="profissao"
               class="form-control inputs_border"
               placeholder="Ex.: Pedreiro, manicure..."
             />
@@ -104,6 +116,7 @@
             <label class="">CEP</label>
             <input
               type="text"
+              name="cep"
               class="form-control inputs_border"
               placeholder="Ex.: 99999999"
             />
@@ -112,6 +125,7 @@
             <label class="">Estado</label>
             <input
               type="text"
+              name="estado"
               class="form-control inputs_border"
               placeholder="Ex.: Bahia"
             />
@@ -120,6 +134,7 @@
             <label class="">Cidade</label>
             <input
               type="text"
+              name="cidade"
               class="form-control inputs_border"
               placeholder="Ex.: Ibipeba"
             />
@@ -128,6 +143,7 @@
             <label class="">Bairro</label>
             <input
               type="text"
+              name="bairro"
               class="form-control inputs_border"
               placeholder="Ex.: Bairro Boa esperança"
             />
@@ -139,6 +155,7 @@
             <label class="">Rua</label>
             <input
               type="tel"
+              name="rua_pessoal"
               class="form-control inputs_border"
               placeholder="Digite o nome da rua na qual você mora"
             />
@@ -147,14 +164,16 @@
             <label class="">Login de Usuário</label>
             <input
               type="text"
+              name="login"
               class="form-control inputs_border"
-              placeholder="email"
+              placeholder="Login"
             />
           </div>
           <div class="col-3">
             <label class="">Senha</label>
             <input
               type="password"
+              name="senha"
               class="form-control inputs_border"
               placeholder="********"
             />
@@ -167,6 +186,7 @@
             type="checkbox"
             value=""
             id="flexCheckChecked"
+            name="aceite_termos"
             checked
           />
           <label class="form-check-label" for="flexCheckChecked">
@@ -185,15 +205,14 @@
             />
           </div>
           <div class="col-6">
-            <input
-              type="submit"
+            <button
+              onclick="cadastrar()"
               class="btn botao container-fluid"
               name="btn_enviar"
-              value="Cadastrar"
-            />
+            >Cadastrar</button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
 
     <div
@@ -244,6 +263,9 @@
         </div>
       </div>
     </div>
+    <script src="./js/session.js"></script>
+    <script src="./js/requisitions.js"></script>
+    <script src="./js/pages/register.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

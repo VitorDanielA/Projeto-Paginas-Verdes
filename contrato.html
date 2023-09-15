@@ -22,11 +22,13 @@
       rel="stylesheet"
     />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg nav_cor p-3">
       <div class="container-fluid">
-        <a class="navbar-brand title-padding" href="#"
+        <a class="navbar-brand title-padding" href="homescreen.html"
           ><strong class="strong_title">Páginas Verdes</strong></a
         >
         <button
@@ -48,7 +50,7 @@
             <li class="nav-item d-flex">
               <i class="bi bi-person icone"></i>
               <a class="nav-link" href="perfil.html" aria-disabled="true"
-                ><span class="menu-padding">Carlos Brito</span></a
+                ><span class="menu-padding nome_usuario">Carlos Brito</span></a
               >
             </li>
             <li class="nav-item">
@@ -57,8 +59,8 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="chat.html"
-                ><span class="menu-padding">Chat</span></a
+              <button class="nav-link" onclick="gotoChat()"
+                ><span class="menu-padding">Chat</span></button
               >
             </li>
             <li class="nav-item dropdown">
@@ -94,9 +96,9 @@
           style="height: 300px"
         />
         <div class="card-body">
-          <h5 class="card-title">Super Mário Bros</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Encanador</h6>
-          <p class="card-text">
+          <h5 class="card-title nome_profissional">Super Mário Bros</h5>
+          <h6 class="card-subtitle mb-2 text-muted profissao_profissional">Encanador</h6>
+          <p class="card-text descricao_profissional">
             Quer conhecer melhor o profissional em questão? Não perca a
             oportunidade de clicar no botão abaixo e descobrir detalhes, além de
             visualizar os termos de contrato!
@@ -357,37 +359,8 @@
 
     <script src="./js/session.js"></script>
     <script src="./js/requisitions.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/pages/contrato.js"></script>
 
-    <script>
-      function gotoChat() {
-        //aqui irá o id do profissional selecionado
-        let otherid = "f0658e3b-e9ed-4a81-8302-cf6232df7580";
-        let chatLoc = "chat.html";
-
-        get("chatbetween/find/user/" + getUser().id + "/" + otherid)
-          .then((cb) => {
-            if (cb.id) {
-              window.location.href = chatLoc;
-            } else {
-              //criar chat bet
-              post("chatbetween/save", {
-                userOne: { id: getUser().id },
-                userTwo: { id: otherid },
-              })
-                .then((created) => {
-                  if (created.id) {
-                    window.location.href = chatLoc;
-                  }
-                })
-                .catch((error) => {
-                  console.log("error", error);
-                });
-            }
-          })
-          .catch((error) => {
-            console.log("error", error);
-          });
-      }
-    </script>
   </body>
 </html>
