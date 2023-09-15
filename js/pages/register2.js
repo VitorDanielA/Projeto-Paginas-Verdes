@@ -26,12 +26,19 @@ function cadastrar(){
     post('user/save', newUser).then(success=>{
         console.log('Success ', success)
         alert('Salvo!')
-
-        window.location.reload()
+        showToast(
+            "Salvo com sucesso!",
+            `Bem vindo ao Páginas Verdes, ${success.name}!`,
+            "success",
+            "bi bi-check-circle-fill"
+          );
+        // window.location.reload()
     }).catch(error=>{
         console.log('Error' , error)
 
-        alert('Error' + error)
+        // alert('Error' + error)
+        showToast("Erro ao salvar", error, "danger", "bi bi-bug-fill");
+
 
     })
 
