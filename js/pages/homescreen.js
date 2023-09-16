@@ -24,7 +24,7 @@ function criarDivProissional(user){
         <div class="media text-muted pt-3 profissional">
             <img
               class="mr-2 rounded"
-              src="assets/pexels-andrea-piacquadio-3779705.jpg"
+              src="${user.profilePicture ? user.profilePicture.link:'assets/pexels-andrea-piacquadio-3779705.jpg'}" style="height:100px;width: 100px;object-fit: cover;"  
               data-holder-rendered="true"
             />
             <p class="media-body pb-3 mb-0 small border-bottom border-gray">

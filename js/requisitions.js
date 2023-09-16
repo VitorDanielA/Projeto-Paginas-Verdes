@@ -151,6 +151,42 @@ const headers = {
     bootstrapToast.show();
 }
 
+function toggleLoader(show) {
+    if (show) {
+        const spinnerOverlay = `
+            <style>
+            .spinner-overlay {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom:0;
+                width: 100vw;
+                height: 150vh;
+                background-color: rgba(255, 255, 255, 0.5);
+                z-index: 9999;
+            }
+
+            .spinner-text {
+                color: black;
+            }
+        </style>
+            <div class="spinner-overlay">
+                <div class="spinner-grow text-primary" role="status"></div>
+                <div class="spinner-text">Aguarde...</div>
+            </div>
+        `;
+        
+        $('body').append(spinnerOverlay);
+       
+    } else {
+        $('.spinner-overlay').remove();
+    }
+}
+
 function getParameterFromUrl(param){
     var queryString = (window.location.search)
     var searchParams = new URLSearchParams(queryString);

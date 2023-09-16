@@ -72,7 +72,7 @@ function handleSendMessage() {
   
   if (messageText !== "") {
     publish(messageText);
-    createMessageHTML(messageText, "my", { name: "Você" });
+    createMessageHTML(messageText, "my", getUser());
 
     // Clear the input value after sending the message
 
@@ -92,13 +92,16 @@ function createMessageHTML(messageText, clazz, user, currentTime) {
   } else {
     currentTime = formatTime(currentTime);
   }
+  if(user.id === getUser().id){
+    user.name = "Você"
+  }
 
   let htmlmes = `
           <div class="${clazz}-chat-message rounded p-3 mb-2">
               <div class="avatar d-flex">
                   <img src="${
-                    user.picture || "./assets/pexels-caleb-oquendo-7772528.jpg"
-                  }" alt="${user.name}" class="rounded-circle">
+                    (user.profilePicture ? user.profilePicture.link: 0) || "./assets/pexels-caleb-oquendo-7772528.jpg" 
+                  }"  width="35px" height="35px" alt="${user.name}" class="rounded-circle" style="object-fit: cover;">
               </div>
               <div class="message">
                   <strong>${user.name}:</strong>
@@ -124,7 +127,7 @@ function formatTime(arr) {
   const [year, month, day, hour, minute] = arr;
 
   // Use Intl.DateTimeFormat to format the time
-  const formattedTime = new Intl.DateTimeFormat("en-US", {
+  const formattedTime = new Intl.DateTimeFormat("pt-BR", {
     day: "2-digit",
       month: "2-digit",
       year: "numeric",
@@ -179,6 +182,7 @@ function recive(message) {
 
 function getAllChatsBetweenMe() {
   const contactsbox = $("#contacts-list");
+  toggleLoader(true)
   get("chatbetween/find/user/" + getUser().id)
     .then((chatbetlist) => {
       chatsBetween = chatbetlist;
@@ -195,7 +199,7 @@ function getAllChatsBetweenMe() {
           otherUser = chatbet.userOne;
         }
 
-        console.log("Chat between me and ", otherUser.name);
+        // console.log("Chat between me and ", otherUser.name);
 
         let newHtml = createContactHTML(
           otherUser,
@@ -208,15 +212,15 @@ function getAllChatsBetweenMe() {
     })
     .catch((error) => {
       console.log("Error ", error);
-    });
+    })
 }
 
 function createContactHTML(user) {
   return `
             <div class="contact" id="${user.id}" onClick="select(event)">
                 <img  src="${
-                  user.profile || "./assets/pexels-trần-hồng-công-10383580.jpg"
-                }" alt="${user.name}" class="rounded-circle" width="50px">
+                  (user.profilePicture ? user.profilePicture.link: 0)|| "./assets/pexels-caleb-oquendo-7772528.jpg"
+                }" alt="${user.name}" class="rounded-circle" width="50px" height="50px" style="object-fit: cover;">
                 ${user.name}
             </div>
       `;
@@ -233,6 +237,7 @@ function setSelected(clickedId) {
   userTalking = otherByCB(getCBByUserId(clickedId));
   $('#title_chat').html('Chat - '+userTalking.name)
   $("#talker_name").html(userTalking.name);
+  $("#takler_image").attr('src', (userTalking.profilePicture ? userTalking.profilePicture.link: './assets/pexels-caleb-oquendo-7772528.jpg'));
 
   // Remove a classe 'selected' de todos os divs
   $(".contact").removeClass("selected");
@@ -241,9 +246,9 @@ function setSelected(clickedId) {
   $("#" + clickedId).addClass("selected");
 
   //Aqui buscar mensagens do bacno entre userTalking and getUser().id
-  get("message/find/all/" + userTalking.id + "/" + getUser().id)
-    .then((messages) => {
-      console.log("Messages", messages);
+  toggleLoader(true)
+  get("message/find/all/" + userTalking.id + "/" + getUser().id) .then((messages) => {
+      // console.log("Messages", messages);
       const chatBox = $(".chat-box");
       chatBox.html("");
 
@@ -257,14 +262,16 @@ function setSelected(clickedId) {
         createMessageHTML(
           message.content,
           clazz,
-          clazz === "my" ? { name: "Você" } : message.sender,
+          clazz === "my" ? getUser() : message.sender,
           message.createdAt
         );
       });
-    })
-    .catch((error) => {
+      
+    }).catch((error) => {
       console.log("Error ", error);
-    });
+    }).finally(() => {
+      toggleLoader(false)
+    })
 }
 
 function getCBByUserId(id) {

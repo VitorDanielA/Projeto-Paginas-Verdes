@@ -83,7 +83,8 @@
 
 .other-chat-message {
   justify-self: start;
-  display: flex;
+  display: flex;   
+  width: 100%;
   height: fit-content;
 }
 
@@ -136,13 +137,26 @@
   padding-top: 20px;
 }
 
+.chat_div {
+   display: flex;
+}
+
 @media (min-width: 768px) {
   #toggleContacts {
     display: none;
   }
+  
+ 
 }
 
 @media (max-width: 768px) {
+  .chat_div {
+    flex-direction: column;
+  }
+  .chat_div .contacts{
+    width: 100%;
+  }
+  
   .chat-content {
     width: 100%;
   }
