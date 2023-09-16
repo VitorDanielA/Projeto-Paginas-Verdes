@@ -84,17 +84,23 @@ const headers = {
     }
 }
 
- async function uploadFile(endpoint, file, pi) {
+ async function upload_file(endpoint, file, pi) {
+    console.log("file", file);
+
     const formData = new FormData();
     formData.append("file", file);
     formData.append("parentId", pi);
-    
+
+
+    const customHeaders = {}
+    customHeaders["UserId"] = getUser().id
     try {
-      const response = await fetch(HOST+API+endpoint, {
-        method: "POST",
-        body: formData,
-        headers:headers
-      });
+        console.log('Header ', customHeaders )
+        const response = await fetch(HOST+API+endpoint, {
+            method: "POST",
+            body: formData,
+            headers:customHeaders 
+        });
   
         if (!response.ok) {
             throw await response.text()
