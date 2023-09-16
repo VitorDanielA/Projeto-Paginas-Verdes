@@ -1,6 +1,6 @@
 
 
-const basePath = '/saude-front'
+const basePath = '/'
 
  { basePath }
 
@@ -11,7 +11,6 @@ const errorMessage = (m)=>{
  function validateUser(){
     let user = localStorage.getItem('logged_user')
     if(user == null || user == undefined){
-        errorMessage("Por Favor, faça login para acessar a página")
         window.location.href = basePath+"/"
     }
 }
@@ -28,5 +27,5 @@ const errorMessage = (m)=>{
 
  function logOut(){
     localStorage.removeItem('logged_user')
-    window.location.href = basePath+"/"
+    window.location.href = "/index.html"
 }

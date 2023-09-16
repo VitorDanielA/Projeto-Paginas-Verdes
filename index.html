@@ -67,6 +67,7 @@
             class="btn botao container-fluid"
             onClick="makeLogin()"
             name="btn_enviar"
+            id="btn_enviar"
           >
             ACESSAR
           </button>
@@ -98,7 +99,8 @@
       function makeLogin() {
         let username = $("#username").val();
         let password = $("#password").val();
-
+    
+        $('#btn_enviar').append('<span class="spinner-border spinner-border-sm" role="status" id="spinner_login" aria-hidden="true"></span>')
         login_user(username, password)
           .then((user) => {
             setUser(user);
@@ -113,6 +115,8 @@
           })
           .catch((error) => {
             showToast("Erro ao fazer login", error, "danger", "bi bi-bug-fill");
+          }).finally(()=>{
+            $('#spinner_login').remove()
           });
       }
     </script>
