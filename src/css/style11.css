@@ -17,6 +17,30 @@ i {
   color: #ffffff;
 }
 
+.fa_color{
+  color: #4fa387;
+  padding-right: 6px;
+}
+
+.fa_color_acess{
+  color: #fdfdfd;
+  background-color: #00008B;
+}
+
+#audioPlayer{
+  display: none;
+}
+
+.audio-button{
+  border: none;
+  background-color: #ffffff;
+}
+
+.dropdown-menu .dropdown-item:focus{
+  background-color: #cacaca;
+  color: #000;
+}
+
 span {
   color: #ffffff;
 }
@@ -64,13 +88,18 @@ label {
   color: #807f7f;
 }
 
-.label_tex {
+.label_tex{
   margin: 0px;
 }
 
 .botao {
   background-color: #4fa387;
   color: #ffffff;
+}
+
+.botao_acesss{
+  background-color: #4fa387 !important;
+  color: #ffffff !important;
 }
 
 .botao:hover {
@@ -93,9 +122,13 @@ label {
   color: #ffffff;
 }
 
+.cor_botao_acess{
+  color: #00008B;
+}
+
 .corPadrao{
-  background-color: #00008B;
-  color: #ffffff;
+  background-color: #00008B !important;
+  color: #ffffff !important;
 }
 
 .corPadrao:hover{

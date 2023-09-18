@@ -57,11 +57,23 @@
 
 i {
   padding-top: 6px;
-  color: #ffffff;
+  color: #000000;
+}
+
+i .fa{
+  background-color: #4fa387;
 }
 
 span {
+  color: #000000;
+}
+
+.nome_navbar{
   color: #ffffff;
+}
+
+.nome_toggle{
+  color: #000;
 }
 
 .strong_title {

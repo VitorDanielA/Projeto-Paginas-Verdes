@@ -47,19 +47,19 @@
         >
           <ul class="navbar-nav ms-auto mb-lg-0 menu-padding">
             <li class="nav-item d-flex">
-              <i class="bi bi-person icone"></i>
+              <i class="bi bi-person icone nome_navbar"></i>
               <a class="nav-link" href="perfil.html" aria-disabled="true"
-                ><span class="menu-padding nome_usuario">Carlos Brito</span></a
+                ><span class="menu-padding nome_usuario nome_navbar">Carlos Brito</span></a
               >
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="contato.html"
-                ><span class="menu-padding">Contato</span></a
+                ><span class="menu-padding nome_navbar">Contato</span></a
               >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="chat.html"
-                ><span class="menu-padding">Chat</span></a
+                ><span class="menu-padding nome_navbar">Chat</span></a
               >
             </li>
             <li class="nav-item dropdown">
@@ -70,13 +70,13 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span>Anúncios</span>
+                <span class="nome_navbar">Anúncios</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="#">Meus anúncios</a></li>
-                <li><a class="dropdown-item" href="#">Adicionar anúncio</a></li>
+                <li><a class="dropdown-item" href="adicionarAnuncio.html">Adicionar anúncio</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Reportar anúncio</a></li>
+                <li><a class="dropdown-item" href="denunciarAnuncio.html">Reportar anúncio</a></li>
               </ul>
             </li>
           </ul>
@@ -123,102 +123,166 @@
     </div>
 
     <div class="container">
-      <div class="my-3 p-3 bg-white rounded shadow-sm ">
-        <h6 class="border-bottom border-gray pb-2 mb-0">
-          Atualizações recentes
-        </h6>
-        <div class="atualizacoes">
-          <div class="media text-muted pt-3 profissional">
-            <img
-              class="mr-2 rounded"
-              src="assets/pexels-caleb-oquendo-7772528.jpg"
-              data-holder-rendered="true"
-            />
-            <p class="media-body pb-3 mb-0 small border-bottom border-gray">
-              <strong class="d-block text-gray-dark mt-2">@MarioBros</strong>
-              <strong class="d-block text-gray-dark mb-1">Encanador</strong>
-              Olá, meu nome é Mário Bross, e sou um encanador altamente experiente
-              com mais de 10 anos de atuação na área. Minha paixão por solucionar
-              problemas relacionados a encanamento me levou a aprimorar minhas
-              habilidades e a me tornar um especialista em lidar com diversos
-              tipos de vazamentos, entupimentos e reparos em sistemas hidráulicos.
-              Sempre me esforço para oferecer um serviço de alta qualidade,
-              garantindo que meus clientes tenham suas necessidades atendidas de
-              maneira eficiente e confiável. <br />
-              <a
-                href="contrato.html"
-                class="btn mt-2 botao"
-                style="flex-wrap: wrap"
-                ><i class="bi bi-person-fill icone"></i> Perfil</a
-              >
-            </p>
-          </div>
-          <div class="media text-muted pt-3 profissional">
-            <img
-              class="mr-2 rounded"
-              src="assets/pexels-andrea-piacquadio-3779705.jpg"
-              data-holder-rendered="true"
-            />
-            <p class="media-body pb-3 mb-0 small border-bottom border-gray">
-              <strong class="d-block text-gray-dark mt-2">@JoanRodrigues</strong>
-              <strong class="d-block text-gray-dark mb-1">@Dentista</strong>
-              Olá, eu sou a Dr. Joan Rodrigues, e tenho o prazer de ser um
-              dentista dedicado a proporcionar a você e à sua família cuidados
-              dentários excepcionais. Com uma formação sólida e anos de
-              experiência clínica, minha missão é não apenas tratar problemas
-              dentários, mas também educar meus pacientes sobre a importância de
-              uma boa saúde bucal e prevenção. Utilizo as mais recentes
-              tecnologias e técnicas para garantir tratamentos eficazes e
-              confortáveis, sempre priorizando o bem-estar dos meus pacientes.
-              <br />
-              <a
-                href="contrato.html"
-                class="btn mt-2 botao"
-                style="flex-wrap: wrap"
-                ><i class="bi bi-person-fill icone"></i> Perfil</a
-              >
-            </p>
-          </div>
+      <div class="row flex-nowrap">
+          <div class="col-auto px-0">
+              <div id="sidebar" class="collapse collapse-horizontal show border-end">
+                <h5 class="my-3"><i class="bi bi-funnel-fill pe-2"></i>Filtrar por: </h3>
+                  <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
+                    <div class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"> 
+                      <label for="exampleSelect" class="form-label">Preço</label>   
+                      <select class="form-select">
+                        <option>Até 100$</option>
+                        <option>Até 200$</option>
+                        <option>Até 500$</option>
+                        <option>Até 1000$</option>
+                        <option>Ilimitado</option>
+                      </select> 
+                    </div>
 
-          <div class="media text-muted pt-3 profissional">
-            <img
-              class="mr-2 rounded"
-              src="assets/pexels-trần-hồng-công-10383580.jpg"
-              data-holder-rendered="true"
-            />
-            <p class="media-body pb-3 mb-0 small border-bottom border-gray">
-              <strong class="d-block mt-2">@LuisOliveira</strong>
-              <strong class="d-block mb-1">Pedreiro</strong>
-              Oi, eu sou o Luís Oliveira, um pedreiro com uma paixão pela
-              construção e uma vasta experiência em projetos residenciais e
-              comerciais. Minha trajetória inclui desde pequenas reformas até
-              grandes construções, sempre buscando entregar resultados de alta
-              qualidade aos meus clientes. Tenho um olhar atento aos detalhes e um
-              compromisso inabalável com a segurança e a durabilidade das
-              estruturas que construo. Estou à disposição para ajudar a
-              transformar suas ideias em realidade, seja construindo um novo
-              espaço ou renovando um já existente. Se você está em busca de um
-              profissional comprometido e qualificado na área da construção, estou
-              aqui para oferecer soluções sólidas e confiáveis. <br />
-              <a
-                href="contrato.html"
-                class="btn mt-2 botao"
-                style="flex-wrap: wrap"
-                ><i class="bi bi-person-fill icone"></i> Perfil</a
-              >
-            </p>
+                    <div class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar">
+                      <label for="exampleSelect" class="form-label">Avaliações</label>   
+                      <select class="form-select">
+                        <option>★ 1</option>
+                        <option>★ 2</option>
+                        <option>★ 3</option>
+                        <option>★ 4</option>
+                        <option>★ 5</option>
+                      </select> 
+                    </div>
+
+                    <div class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar">
+                      <label for="exampleSelect" class="form-label">Categoria</label>
+                        <select class="form-select">
+                          <option value="1">Tecnologia da Informação</option>
+                          <option value="2">Saúde</option>
+                          <option value="3">Educação</option>
+                          <option value="4">Marketing</option>
+                          <option value="5">Domésticos</option>
+                          <option value="6">Arte e Design</option>
+                          <option value="7">Consultoria</option>
+                          <option value="8">Alimentação</option>
+                          <option value="9">Construção</option>
+                          <option value="10">Esportes</option>
+                        </select>
+                    </div>  
+
+                    <div class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar">
+                      <label for="exampleSelect" class="form-label">Distância KM</label> <br>
+                      <input type="range" id="customRange" min="0" max="150" step="1" class="estilo"> <br>
+                      <p>Valor selecionado: <span id="rangeValue">75</span>km</p>
+                    </div>
+                      
+                  </div>
+              </div>
           </div>
-          
-        </div>
-        <small class="d-block text-right mt-3">
-          <div>
-            <button class="btn botao_form col-3" type="submit">
-              Atualizações
-            </button>
-          </div>
-        </small>
+          <main class="col ps-md-2 pt-2">
+            <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border rounded-3 p-1 text-decoration-none nome_toggle"><i class="bi bi-filter bi-lg py-2 p-1"></i> Filtros</a>
+              <div class="row">
+                  <div class="col-12">
+                    <div class="container">
+                      <div class="my-3 p-3 bg-white rounded shadow-sm ">
+                        <h6 class="border-bottom border-gray pb-2 mb-0">
+                          Atualizações recentes
+                        </h6>
+                        <div class="atualizacoes">
+                          <div class="media text-muted pt-3 profissional">
+                            <img
+                              class="mr-2 rounded"
+                              src="assets/pexels-caleb-oquendo-7772528.jpg"
+                              data-holder-rendered="true"
+                            />
+                            <p class="media-body pb-3 mb-0 small border-bottom border-gray">
+                              <strong class="d-block text-gray-dark mt-2">@MarioBros</strong>
+                              <strong class="d-block text-gray-dark mb-1">Encanador</strong>
+                              Olá, meu nome é Mário Bross, e sou um encanador altamente experiente
+                              com mais de 10 anos de atuação na área. Minha paixão por solucionar
+                              problemas relacionados a encanamento me levou a aprimorar minhas
+                              habilidades e a me tornar um especialista em lidar com diversos
+                              tipos de vazamentos, entupimentos e reparos em sistemas hidráulicos.
+                              Sempre me esforço para oferecer um serviço de alta qualidade,
+                              garantindo que meus clientes tenham suas necessidades atendidas de
+                              maneira eficiente e confiável. <br />
+                              <a
+                                href="contrato.html"
+                                class="btn mt-2 botao"
+                                style="flex-wrap: wrap"
+                                ><i class="bi bi-person-fill icone nome_navbar"></i> Perfil</a
+                              >
+                            </p>
+                          </div>
+                          <div class="media text-muted pt-3 profissional">
+                            <img
+                              class="mr-2 rounded"
+                              src="assets/pexels-andrea-piacquadio-3779705.jpg"
+                              data-holder-rendered="true"
+                            />
+                            <p class="media-body pb-3 mb-0 small border-bottom border-gray">
+                              <strong class="d-block text-gray-dark mt-2">@JoanRodrigues</strong>
+                              <strong class="d-block text-gray-dark mb-1">@Dentista</strong>
+                              Olá, eu sou a Dr. Joan Rodrigues, e tenho o prazer de ser um
+                              dentista dedicado a proporcionar a você e à sua família cuidados
+                              dentários excepcionais. Com uma formação sólida e anos de
+                              experiência clínica, minha missão é não apenas tratar problemas
+                              dentários, mas também educar meus pacientes sobre a importância de
+                              uma boa saúde bucal e prevenção. Utilizo as mais recentes
+                              tecnologias e técnicas para garantir tratamentos eficazes e
+                              confortáveis, sempre priorizando o bem-estar dos meus pacientes.
+                              <br />
+                              <a
+                                href="contrato.html"
+                                class="btn mt-2 botao"
+                                style="flex-wrap: wrap"
+                                ><i class="bi bi-person-fill icone nome_navbar"></i> Perfil</a
+                              >
+                            </p>
+                          </div>
+                
+                          <div class="media text-muted pt-3 profissional">
+                            <img
+                              class="mr-2 rounded"
+                              src="assets/pexels-trần-hồng-công-10383580.jpg"
+                              data-holder-rendered="true"
+                            />
+                            <p class="media-body pb-3 mb-0 small border-bottom border-gray">
+                              <strong class="d-block mt-2">@LuisOliveira</strong>
+                              <strong class="d-block mb-1">Pedreiro</strong>
+                              Oi, eu sou o Luís Oliveira, um pedreiro com uma paixão pela
+                              construção e uma vasta experiência em projetos residenciais e
+                              comerciais. Minha trajetória inclui desde pequenas reformas até
+                              grandes construções, sempre buscando entregar resultados de alta
+                              qualidade aos meus clientes. Tenho um olhar atento aos detalhes e um
+                              compromisso inabalável com a segurança e a durabilidade das
+                              estruturas que construo. Estou à disposição para ajudar a
+                              transformar suas ideias em realidade, seja construindo um novo
+                              espaço ou renovando um já existente. Se você está em busca de um
+                              profissional comprometido e qualificado na área da construção, estou
+                              aqui para oferecer soluções sólidas e confiáveis. <br />
+                              <a
+                                href="contrato.html"
+                                class="btn mt-2 botao"
+                                style="flex-wrap: wrap"
+                                ><i class="bi bi-person-fill icone nome_navbar"></i> Perfil</a
+                              >
+                            </p>
+                          </div>
+                          
+                        </div>
+                        <small class="d-block text-right mt-3">
+                          <div>
+                            <button class="btn botao_form col-3" type="submit">
+                              Atualizações
+                            </button>
+                          </div>
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </main>
       </div>
-    </div>
+  </div>
+
+    
 
     <footer class="flex py-4 footer_color">
       <div class="container text-center">
@@ -232,11 +296,20 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="./js/session.js"></script>
+    <!-- <script src="./js/session.js"></script>
     <script src="./js/requisitions.js"></script>
-    <script src="./js/pages/homescreen.js"></script>
+    <script src="./js/pages/homescreen.js"></script> -->
 
     <!-- <script src="./js/pages/homescreen.js"></script> -->
     <script src="./js/navbar.js"></script>
+    <script>
+      // Atualizar o valor do input range conforme o usuário move a faixa
+      const rangeInput = document.getElementById('customRange');
+      const rangeValue = document.getElementById('rangeValue');
+      
+      rangeInput.addEventListener('input', () => {
+          rangeValue.textContent = rangeInput.value;
+      });
+  </script>
   </body>
 </html>
