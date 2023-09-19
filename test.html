@@ -124,7 +124,7 @@
         
         let files = $('#file_input').prop('files')
 
-        upload_file('public/upload', files[0], getUser().id).then(success=>{
+        upload_file(files[0], getUser().id).then(success=>{
           console.log(success)
           $('.container_infos').append(`<img src="${success.link}"/>`)
         }).catch(error=>{

@@ -47,7 +47,7 @@ const headers = {
     }
 }
 
- async function post(endpoint, body){
+ async function post(endpoint, body, files){
     
     try{
         const response = await fetch(HOST+API+endpoint, {method:'POST', headers: headers, body:JSON.stringify(body)})
@@ -57,6 +57,10 @@ const headers = {
         }
 
         const result = await response.json();
+
+        console.log('Result', result)
+        if(files){await uploadFiles(files, result.id)}
+
         return result;
     } catch (error) {
         
@@ -84,8 +88,7 @@ const headers = {
     }
 }
 
- async function upload_file(endpoint, file, pi) {
-    console.log("file", file);
+ async function upload_file(file, pi) {
 
     const formData = new FormData();
     formData.append("file", file);
@@ -96,7 +99,35 @@ const headers = {
     customHeaders["UserId"] = getUser().id
     try {
         console.log('Header ', customHeaders )
-        const response = await fetch(HOST+API+endpoint, {
+        const response = await fetch(HOST+API+'public/upload', {
+            method: "POST",
+            body: formData,
+            headers:customHeaders 
+        });
+  
+        if (!response.ok) {
+            throw await response.text()
+        }
+
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        
+        throw error;
+    }
+  }
+
+ async function upload_file_batch(files, pi) {
+    const formData = new FormData();
+    formData.append("files", files);
+    formData.append("parentId", pi);
+
+
+    const customHeaders = {}
+    customHeaders["UserId"] = getUser().id
+    try {
+        console.log('Header ', customHeaders )
+        const response = await fetch(HOST+API+'public/upload/batch', {
             method: "POST",
             body: formData,
             headers:customHeaders 
@@ -191,5 +222,24 @@ function getParameterFromUrl(param){
     var queryString = (window.location.search)
     var searchParams = new URLSearchParams(queryString);
     return searchParams.get(param);
+    
+}
+
+async function uploadFiles(files, id){
+    let newObj = {};
+
+
+    if (files instanceof FileList) {
+        if(files.length ==  1){
+            newObj = await upload_file(files[0], id)
+        }else if(files.length > 1){
+            newObj = await upload_file_batch(files, id)
+        }
+    
+    } else if (files instanceof File) {
+        newObj = await upload_file(files, id)
+    }
+
+    return newObj;
     
 }
