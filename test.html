@@ -88,8 +88,10 @@
       class="d-flex align-items-center justify-content-evenly container_infos"
     >
       
-      <input type="file" class="form-control inputs_border" id="file_input"/>
-      <button class="btn container-fluid botao">Enviar</button>
+    <div id="rating_test"></div>
+    <div id="rating_test2"></div>
+      
+    
 
       
     </div>
@@ -110,27 +112,22 @@
       crossorigin="anonymous"
     ></script>
 
+
     <script src="./js/session.js"></script>
     <script src="./js/requisitions.js"></script>
 
     <script src="./js/pages/perfil.js"></script>
     <script src="./js/navbar.js"></script>
-    
-    
     <script>
-      console.log('user ', getUser().name)
 
-      $('.botao').on('click', ()=>{
-        
-        let files = $('#file_input').prop('files')
 
-        upload_file(files[0], getUser().id).then(success=>{
-          console.log(success)
-          $('.container_infos').append(`<img src="${success.link}"/>`)
-        }).catch(error=>{
-          console.log( error)
-        })
-      })
+        createStar((val)=>{
+            console.log("val1", val)
+        }, "rating_test", 100, 'green', true, 1)
+
+        createStar((val)=>{
+            console.log("val2", val)
+        }, "rating_test2", 100, 'green', true, 3)
     </script>
   </body>
 </html>

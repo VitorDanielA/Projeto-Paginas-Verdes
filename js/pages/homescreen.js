@@ -32,9 +32,12 @@ function criarDivProissional(serviceOffering, i, el){
                   data-holder-rendered="true"
                 />
                 <div>
+                  <strong class="d-block text-gray-dark mt-2">${serviceOffering.worker.name}</strong>
                   <strong class="d-block text-gray-dark mt-2">${serviceOffering.name}</strong>
-                  <strong class="d-block text-gray-dark mt-2">@${serviceOffering.worker.login}</strong>
                   <strong class="d-block text-gray-dark mb-1">${serviceOffering.worker.work}</strong>
+                </div>
+                <div>
+                  <div id="rating_${serviceOffering.worker.id}"></div>
                 </div>
               </div>
               
@@ -89,6 +92,8 @@ function criarDivProissional(serviceOffering, i, el){
       }
       
     });
+
+    createStar(()=>{}, `rating_${serviceOffering.worker.id}`, 20, 'orange', false, serviceOffering.worker.ratingAverage || 1)
 
     return;
     return (

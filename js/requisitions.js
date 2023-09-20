@@ -251,3 +251,94 @@ async function uploadFiles(files, id){
     return newObj;
     
 }
+/*
+Usage->
+<div id="rating"></div>
+
+
+var obj = {}
+createStar((val)=>{
+    console.log("val", val)
+    obj.rating = val
+}, "rating", 100, 'green', true)
+
+*/
+function createStar(func, elId, starSize, starColor, edit, predef){
+    const starElement = $("#"+elId)
+    if(!starElement){
+      return 0;
+    }
+
+    let starss_style = `
+      <style>
+        #starrr_${elId} .bi-star-fill, .bi-star{
+          font-size:${starSize}px;
+        }
+        #starrr_${elId} .bi-star{
+          color:gray
+        }
+        #starrr_${elId} .bi-star-fill{
+          color: ${starColor};
+        }
+      </style>
+    `
+    starElement.append(starss_style)
+
+    let starss = `
+      <div class="starrr" id="starrr_${elId}">
+        <i class="star bi bi-star" id="${elId}__star_1"></i>
+        <i class="star bi bi-star" id="${elId}__star_2"></i>
+        <i class="star bi bi-star" id="${elId}__star_3"></i>
+        <i class="star bi bi-star" id="${elId}__star_4"></i>
+        <i class="star bi bi-star" id="${elId}__star_5"></i>
+      </div>
+    `
+
+    starElement.append(starss)
+
+    let selected_star = predef || 1
+
+    $('i.star').each( function( index, element ){
+      if(index < selected_star){
+        let el = $("#"+element.id)
+        el.addClass("bi-star-fill")
+        el.removeClass("bi-star")
+      }
+    });
+
+    if(edit){
+        $('#starrr_'+elId+' i.star').on( "click", (e)=>{
+        let star_num = parseInt(e.target.id.match(/__star_(\d+)/)[1])
+        selected_star = star_num
+        console.log('Clicked star',star_num)
+        
+        
+        func(selected_star)
+        
+      })
+
+      $('#starrr_'+elId+' i.star').on( "mouseenter", (e)=>{
+        let star_num = parseInt(e.target.id.match(/__star_(\d+)/)[1])
+
+        $('#starrr_'+elId+' i.star').each( function( index, element ){
+          if(index < star_num){
+            let el = $("#"+element.id)
+            el.addClass("bi-star-fill")
+            el.removeClass("bi-star")
+          }
+          
+        });
+      } ).on( "mouseleave", (e)=>{
+          $('#starrr_'+elId+' i.star').each( function( index, element ){
+            if(index >= selected_star){
+              let el = $("#"+element.id)
+              el.addClass("bi-star")
+              el.removeClass("bi-star-fill")
+            }
+          });
+      } );
+    }
+    
+
+    
+  }

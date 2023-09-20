@@ -281,6 +281,11 @@
                                 <strong class="d-block text-gray-dark mt-2">@MarioBros</strong>
                                 <strong class="d-block text-gray-dark mb-1">Encanador</strong>
                               </div>
+                              <div>
+                                
+                                <div id="rating_test"></div>
+
+                              </div>
                             </div>
                             
                             <div>
@@ -374,6 +379,8 @@
       rangeInput.addEventListener('input', () => {
           rangeValue.textContent = rangeInput.value;
       });
+
+      createStar(()=>{}, "rating_test", 20, 'orange', false, 4)
   </script>
   </body>
 </html>
