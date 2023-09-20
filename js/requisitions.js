@@ -260,10 +260,11 @@ var obj = {}
 createStar((val)=>{
     console.log("val", val)
     obj.rating = val
-}, "rating", 100, 'green', true)
+}, "rating", 100, 'green', 5, true)
 
 */
-function createStar(func, elId, starSize, starColor, edit, predef){
+function createStar(func, elId, starSize, starColor, starnumber, edit, predef){
+    
     const starElement = $("#"+elId)
     if(!starElement){
       return 0;
@@ -271,7 +272,7 @@ function createStar(func, elId, starSize, starColor, edit, predef){
 
     let starss_style = `
       <style>
-        #starrr_${elId} .bi-star-fill, .bi-star{
+        #starrr_${elId} .bi-star-fill, #starrr_${elId} .bi-star{
           font-size:${starSize}px;
         }
         #starrr_${elId} .bi-star{
@@ -283,22 +284,22 @@ function createStar(func, elId, starSize, starColor, edit, predef){
       </style>
     `
     starElement.append(starss_style)
-
+    
     let starss = `
       <div class="starrr" id="starrr_${elId}">
-        <i class="star bi bi-star" id="${elId}__star_1"></i>
-        <i class="star bi bi-star" id="${elId}__star_2"></i>
-        <i class="star bi bi-star" id="${elId}__star_3"></i>
-        <i class="star bi bi-star" id="${elId}__star_4"></i>
-        <i class="star bi bi-star" id="${elId}__star_5"></i>
       </div>
     `
-
     starElement.append(starss)
+
+    let max = starnumber || 5
+    for(var i = 0; i < max; i++){
+        $("#starrr_"+elId).append(`<i class="star bi bi-star" id="${elId}__star_${i+1}"></i>`)
+    }
+
 
     let selected_star = predef || 1
 
-    $('i.star').each( function( index, element ){
+    $('#starrr_'+elId+' i.star').each( function( index, element ){
       if(index < selected_star){
         let el = $("#"+element.id)
         el.addClass("bi-star-fill")
