@@ -147,6 +147,7 @@ span {
 
 .profissional {
   display: flex;
+  
 }
 .profissional img {
   height: fit-content;
@@ -162,4 +163,28 @@ span {
   .container_secundario {
     width: 260px;
   }
+}
+
+.carousel-inner img {
+  width: 400px;
+  aspect-ratio : 1 / 1;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.carousel{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  display: flex;
+}
+
+/* Estilize os indicadores de navegação */
+.carousel-indicators li {
+  background-color: #007bff; /* Cor ativa */
+}
+
+/* Estilize os controles de navegação */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #007bff;
 }

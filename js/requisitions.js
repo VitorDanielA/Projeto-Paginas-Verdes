@@ -118,8 +118,11 @@ const headers = {
   }
 
  async function upload_file_batch(files, pi) {
+    console.log('Files ', files)
     const formData = new FormData();
+    
     formData.append("files", files);
+        
     formData.append("parentId", pi);
 
 
@@ -233,7 +236,12 @@ async function uploadFiles(files, id){
         if(files.length ==  1){
             newObj = await upload_file(files[0], id)
         }else if(files.length > 1){
-            newObj = await upload_file_batch(files, id)
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+
+                await upload_file(file, id)
+            }
+
         }
     
     } else if (files instanceof File) {

@@ -23,6 +23,8 @@
     />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg nav_cor p-3">
@@ -186,6 +188,7 @@
                         </h6>
                         <div class="atualizacoes">
                           <div class="media text-muted pt-3 profissional">
+                            
                             <img
                               class="mr-2 rounded"
                               src="assets/pexels-caleb-oquendo-7772528.jpg"
@@ -194,6 +197,7 @@
                             <p class="media-body pb-3 mb-0 small border-bottom border-gray">
                               <strong class="d-block text-gray-dark mt-2">@MarioBros</strong>
                               <strong class="d-block text-gray-dark mb-1">Encanador</strong>
+                              
                               Olá, meu nome é Mário Bross, e sou um encanador altamente experiente
                               com mais de 10 anos de atuação na área. Minha paixão por solucionar
                               problemas relacionados a encanamento me levou a aprimorar minhas
@@ -265,6 +269,67 @@
                               >
                             </p>
                           </div>
+
+                          <div class="media text-muted pt-3 profissional" style="flex-direction: column;">
+                            <div class="user_info" style="display: flex;height: fit-content;">
+                              <img
+                                class="mr-2 rounded"
+                                src="assets/pexels-caleb-oquendo-7772528.jpg"
+                                data-holder-rendered="true"
+                              />
+                              <div>
+                                <strong class="d-block text-gray-dark mt-2">@MarioBros</strong>
+                                <strong class="d-block text-gray-dark mb-1">Encanador</strong>
+                              </div>
+                            </div>
+                            
+                            <div>
+                             
+                              <div class="conteudo">
+                                <div id="meuCarrossel" class="carousel slide" data-ride="carousel">
+                                 
+                                  
+                                  <!-- Slides -->
+                                  <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                          <img src="assets/pexels-caleb-oquendo-7772528.jpg" alt="Imagem 1">
+                                      </div>
+                                      <div class="carousel-item">
+                                          <img src="assets/pexels-andrea-piacquadio-3779705.jpg" alt="Imagem 2">
+                                      </div>
+                                      <div class="carousel-item">
+                                          <img src="assets/pexels-trần-hồng-công-10383580.jpg" alt="Imagem 3">
+                                      </div>
+                                  </div>
+                                  
+                                  <!-- Controles de navegação -->
+                                  <a class="carousel-control-prev" href="#meuCarrossel" data-slide="prev">
+                                      <span class="carousel-control-prev-icon"></span>
+                                  </a>
+                                  <a class="carousel-control-next" href="#meuCarrossel" data-slide="next">
+                                      <span class="carousel-control-next-icon"></span>
+                                  </a>
+                              </div>
+                              <p class="media-body pb-3 mb-0 small border-bottom border-gray">
+                                Olá, meu nome é Mário Bross, e sou um encanador altamente experiente
+                                com mais de 10 anos de atuação na área. Minha paixão por solucionar
+                                problemas relacionados a encanamento me levou a aprimorar minhas
+                                habilidades e a me tornar um especialista em lidar com diversos
+                                tipos de vazamentos, entupimentos e reparos em sistemas hidráulicos.
+                                Sempre me esforço para oferecer um serviço de alta qualidade,
+                                garantindo que meus clientes tenham suas necessidades atendidas de
+                                maneira eficiente e confiável. 
+                              <br />
+                              <a
+                                href="contrato.html"
+                                class="btn mt-2 botao"
+                                style="flex-wrap: wrap"
+                                ><i class="bi bi-person-fill icone nome_navbar"></i> Perfil</a
+                              >
+                            </p>
+                              
+                            </div>
+                          </div>
                           
                         </div>
                         <small class="d-block text-right mt-3">
@@ -296,11 +361,10 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- <script src="./js/session.js"></script>
+    <script src="./js/session.js"></script>
     <script src="./js/requisitions.js"></script>
-    <script src="./js/pages/homescreen.js"></script> -->
+    <script src="./js/pages/homescreen.js"></script>
 
-    <!-- <script src="./js/pages/homescreen.js"></script> -->
     <script src="./js/navbar.js"></script>
     <script>
       // Atualizar o valor do input range conforme o usuário move a faixa
