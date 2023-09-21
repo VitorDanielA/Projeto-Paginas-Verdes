@@ -93,7 +93,7 @@ function criarDivProissional(serviceOffering, i, el){
       
     });
 
-    createStar(()=>{}, `rating_${serviceOffering.worker.id}`, 20, 'orange', false, serviceOffering.worker.ratingAverage || 1)
+    createStar(()=>{}, `rating_${serviceOffering.worker.id}`, 20, 'orange', 5, false, serviceOffering.worker.ratingAverage || 1)
 
     return;
     return (
