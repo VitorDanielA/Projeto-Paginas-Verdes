@@ -154,7 +154,7 @@ const headers = {
     // Crie um elemento de toast
     var toast = document.createElement('div');
     toast.className = 'toast '+(types.includes(type) ? 'bg-'+type : '');
-    toast.style.position = 'absolute';
+    toast.style.position = 'fixed';
     toast.style.top = '10%';
     toast.style.left = '50%';
     toast.style.transform = 'translate(-50%, -50%)';
