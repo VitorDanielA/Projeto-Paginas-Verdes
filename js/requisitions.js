@@ -185,8 +185,10 @@ const headers = {
     bootstrapToast.show();
 }
 
-function toggleLoader(show) {
+function toggleLoader(show, el) {
     if (show) {
+        var element = $(el)
+        let hasEl = element.length > 0
         const spinnerOverlay = `
             <style>
             .spinner-overlay {
@@ -194,12 +196,12 @@ function toggleLoader(show) {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                position: absolute;
+                position: ${hasEl ?'relative' : 'absolute'} ;
                 top: 0;
                 left: 0;
                 bottom:0;
-                width: 100vw;
-                height: 150vh;
+                min-width: 100%;
+                min-height: 100%;
                 background-color: rgba(255, 255, 255, 0.5);
                 z-index: 9999;
             }
@@ -213,8 +215,13 @@ function toggleLoader(show) {
                 <div class="spinner-text">Aguarde...</div>
             </div>
         `;
-        
-        $('body').append(spinnerOverlay);
+        if(hasEl){
+            element.before(spinnerOverlay);
+
+        }else{
+            $('body').append(spinnerOverlay);
+
+        }
        
     } else {
         $('.spinner-overlay').remove();
@@ -257,72 +264,99 @@ Usage->
 
 
 var obj = {}
-createStar((val)=>{
-    console.log("val", val)
-    obj.rating = val
-}, "rating", 100, 'green', 5, true)
+createStar(func, 
+           elId, 
+           starSize, 
+           starColor, 
+           starNumber, 
+           edit, 
+           value)
 
 */
-function createStar(func, elId, starSize, starColor, starnumber, edit, predef){
+function createStar(parameters){
     
-    const starElement = $("#"+elId)
+    const starElement = $("#"+parameters.elId)
     if(!starElement){
       return 0;
     }
-
     let starss_style = `
       <style>
-        #starrr_${elId} .bi-star-fill, #starrr_${elId} .bi-star{
-          font-size:${starSize}px;
+        #starrr_${parameters.elId} .bi-star-fill, #starrr_${parameters.elId} .bi-star{
+          font-size:${parameters.starSize}px;
         }
-        #starrr_${elId} .bi-star{
+        #starrr_${parameters.elId} .bi-star{
           color:gray
         }
-        #starrr_${elId} .bi-star-fill{
-          color: ${starColor};
+        #starrr_${parameters.elId} .bi-star-fill{
+          color: ${parameters.starColor};
+        }
+
+        .starrr{
+            display: flex;
+        }
+        #${parameters.elId}__star_fraction{
+            position: relative;
+            z-index: 2;
+            left: ${parameters.starSize}px;
+            pointer-events: none;
+            margin-left: -${parameters.starSize}px;
+            clip-path: inset(0% ${(1-getFrationPart(parameters.value)) * 100}% 0% 0%);
         }
       </style>
     `
     starElement.append(starss_style)
     
     let starss = `
-      <div class="starrr" id="starrr_${elId}">
+      <div class="starrr" id="starrr_${parameters.elId}">
       </div>
     `
     starElement.append(starss)
 
-    let max = starnumber || 5
+    let max = parameters.starNumber || 5
     for(var i = 0; i < max; i++){
-        $("#starrr_"+elId).append(`<i class="star bi bi-star" id="${elId}__star_${i+1}"></i>`)
+        $("#starrr_"+parameters.elId).append(`<i class="star bi bi-star" id="${parameters.elId}__star_${i+1}"></i>`)
     }
 
 
-    let selected_star = predef || 1
+    let selected_star = parameters.value || 0
 
-    $('#starrr_'+elId+' i.star').each( function( index, element ){
-      if(index < selected_star){
-        let el = $("#"+element.id)
-        el.addClass("bi-star-fill")
-        el.removeClass("bi-star")
-      }
-    });
+    if(parameters.value >= 1){
+        $('#starrr_'+parameters.elId+' i.star').each( function( index, element ){
+        if(index < parseInt(selected_star)){
+            let el = $("#"+element.id)
+            el.addClass("bi-star-fill")
+            el.removeClass("bi-star")
+        }
+        });
+    }
 
-    if(edit){
-        $('#starrr_'+elId+' i.star').on( "click", (e)=>{
+    if(getFrationPart(selected_star)){
+
+        let elementToFill = $('#'+parameters.elId+'__star_'+parseInt(selected_star+1))
+        console.log((selected_star))
+
+        elementToFill.before(`<i class="star_fraction bi bi-star-fill" id="${parameters.elId}__star_fraction"></i>`)    
+    }
+
+    if(parameters.edit){
+        $('#starrr_'+parameters.elId+' i.star').on( "click", (e)=>{
         let star_num = parseInt(e.target.id.match(/__star_(\d+)/)[1])
-        selected_star = star_num
-        console.log('Clicked star',star_num)
-        
-        
-        func(selected_star)
+
+        if(star_num < selected_star){
+            $('#starrr_'+parameters.elId+' i.star_fraction').remove()
+        }
+
+        selected_star = star_num       
+        parameters.func(selected_star)
+
         
       })
 
-      $('#starrr_'+elId+' i.star').on( "mouseenter", (e)=>{
+      $('#starrr_'+parameters.elId+' i.star').on( "mouseenter", (e)=>{
         let star_num = parseInt(e.target.id.match(/__star_(\d+)/)[1])
 
-        $('#starrr_'+elId+' i.star').each( function( index, element ){
-          if(index < star_num){
+        $('#starrr_'+parameters.elId+' i.star').each( function( index, element ){
+          if(index < Math.round(star_num)){
             let el = $("#"+element.id)
             el.addClass("bi-star-fill")
             el.removeClass("bi-star")
@@ -330,8 +364,8 @@ function createStar(func, elId, starSize, starColor, starnumber, edit, predef){
           
         });
       } ).on( "mouseleave", (e)=>{
-          $('#starrr_'+elId+' i.star').each( function( index, element ){
-            if(index >= selected_star){
+          $('#starrr_'+parameters.elId+' i.star').each( function( index, element ){
+            if(index >= Math.round(selected_star)){
               let el = $("#"+element.id)
               el.addClass("bi-star")
               el.removeClass("bi-star-fill")
@@ -343,3 +377,12 @@ function createStar(func, elId, starSize, starColor, starnumber, edit, predef){
 
     
   }
+
+  
+  function getFrationPart(number) {
+    // Get the fractional part of the number
+    const fractionalPart = (number - Math.floor(number)).toFixed(1);
+    
+    return parseFloat(fractionalPart);
+  }
+  

@@ -281,24 +281,23 @@
                                 <strong class="d-block text-gray-dark mt-2">@MarioBros</strong>
                                 <strong class="d-block text-gray-dark mb-1">Encanador</strong>
                               </div>
-                              <div>
-                                
-                                <div id="rating_test"></div>
-
-                              </div>
+                              
                             </div>
                             
                             <div>
                              
                               <div class="conteudo">
+                                
                                 <div id="meuCarrossel" class="carousel slide" data-ride="carousel">
-                                 
-                                  
                                   <div class="carousel-inner">
-                                      <div class="carousel-item active">
-                                          <img src="assets/pexels-caleb-oquendo-7772528.jpg" alt="Imagem 1">
+                                    <div>
+                                      <div class="star_rating" id="rating_test">
+                                        <span>4.6 &nbsp;</span>
+
                                       </div>
-                                      <div class="carousel-item">
+                                    </div>
+
+                                      <div class="carousel-item active">
                                           <img src="assets/pexels-andrea-piacquadio-3779705.jpg" alt="Imagem 2">
                                       </div>
                                       <div class="carousel-item">
@@ -378,7 +377,8 @@
           rangeValue.textContent = rangeInput.value;
       });
 
-      createStar(()=>{}, "rating_test", 20, 'orange', 5, false, 4)
+      
+      createStar({func:()=>{}, elId:"rating_test", starSize:20, starColor:'orange', starNumber:5, edit:true, value:4.6})
   </script>
   </body>
 </html>

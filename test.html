@@ -88,8 +88,8 @@
       class="d-flex align-items-center justify-content-evenly container_infos"
     >
       
+    <!-- <input type="number" id="val"/> -->
     <div id="rating_test"></div>
-    <div id="rating_test2"></div>
       
     
 
@@ -121,13 +121,11 @@
     <script>
 
 
-        createStar((val)=>{
+      
+        createStar({func:(val)=>{
             console.log("val1", val)
-        }, "rating_test", 100, 'green', 5, true)
+        }, elId:"rating_test", starSize:100, starColor:'green', starNumber:5, edit:true, value:2.3})
 
-        createStar((val)=>{
-            console.log("val2", val)
-        }, "rating_test2", 30, 'green', 1, true, 6)
     </script>
   </body>
 </html>

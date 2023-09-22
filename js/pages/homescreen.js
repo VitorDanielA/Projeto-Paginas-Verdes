@@ -1,11 +1,14 @@
 
 
 const atualizacoes = $('.atualizacoes')
-// toggleLoader(true)
+
+toggleLoader(true, '.atualizacoes')
+atualizacoes.html('')
+
 get('serviceOffering/all').then(serviceOfferings=>{
 
     atualizacoes.html('')
-
+    
     serviceOfferings.forEach((serviceOffering, index) => {
         criarDivProissional(serviceOffering, index, atualizacoes)
     });
@@ -36,9 +39,7 @@ function criarDivProissional(serviceOffering, i, el){
                   <strong class="d-block text-gray-dark mt-2">${serviceOffering.name}</strong>
                   <strong class="d-block text-gray-dark mb-1">${serviceOffering.worker.work}</strong>
                 </div>
-                <div>
-                  <div id="rating_${serviceOffering.worker.id}"></div>
-                </div>
+                
               </div>
               
               <div>
@@ -48,6 +49,16 @@ function criarDivProissional(serviceOffering, i, el){
                     
                     <!-- Slides -->
                     <div class="carousel-inner">
+                        <div>
+                          <div class="star_rating" id="rating_${serviceOffering.worker.id}"> 
+                            <span>${serviceOffering.worker.ratingAverage} &nbsp;</span>
+                          
+                          </div>
+                        </div>
+                        <script>
+                          createStar({func:()=>{}, elId:'rating_${serviceOffering.worker.id}', starSize:20, starColor:'orange', starNumber:5, edit:false, value:${serviceOffering.worker.ratingAverage || 1}})
+                        </script>
+
                         <!-- 
                         <div class="carousel-item">
                             <img src="assets/pexels-trần-hồng-công-10383580.jpg" alt="Imagem 3">
@@ -92,8 +103,6 @@ function criarDivProissional(serviceOffering, i, el){
       }
       
     });
-
-    createStar(()=>{}, `rating_${serviceOffering.worker.id}`, 20, 'orange', 5, false, serviceOffering.worker.ratingAverage || 1)
 
     return;
     return (
