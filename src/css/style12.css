@@ -5,7 +5,7 @@
 }
   
 .nav_cor{
-    background-color: #459d68;
+    background-color: #259753;
 }
   
 .toggle_color {
@@ -28,7 +28,7 @@ span{
 }
 
 .main{
-    background-color: #000000;
+    background-color: #013813;
     height: 86vh;
 }
 
@@ -38,11 +38,12 @@ span{
 
 .title_color{
     color: #ffffff;
-    font-size: 75px;
+    font-size: 65px;
+    text-align: justify;
 }
 
 .botao {
-    background-color: #459d68;
+    background-color: #158a42;
     color: #000000;
     font-weight: 900;
     border-radius: 30px;
