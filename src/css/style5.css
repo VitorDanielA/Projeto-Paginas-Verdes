@@ -5,7 +5,7 @@
 }
 
 .nav_cor {
-  background-color: #4fa387;
+  background-color: #259753;
 }
 
 .inputs_border {
@@ -13,17 +13,25 @@
 }
 
 .inputs_border:focus {
-  border: 1px solid #4fa387;
+  border: 1px solid #259753;
   box-shadow: 0 0 0 0;
 }
 
+.navbar, .navbar i, .navbar span{
+  color: #fff;
+}
+
+.botao i{
+  color: #ffffff;
+}
+
 .botao {
-  background-color: #4fa387;
+  background-color: #259753;
   color: #ffffff;
 }
 
 .botao_form {
-  background-color: #4fa387;
+  background-color: #259753;
   color: #ffffff;
   height: 38px;
 }
@@ -41,17 +49,17 @@
 }
 
 #searchInput:focus {
-  border: 1px solid #4fa387;
+  border: 1px solid #259753;
   box-shadow: 0 0 0 0;
 }
 
 .botao_form:hover {
-  background-color: #3498db;
+  background-color: #32c56d;
   color: #ffffff;
 }
 
 .botao:hover {
-  background-color: #3498db;
+  background-color: #32c56d;
   color: #ffffff;
 }
 
@@ -61,7 +69,7 @@ i {
 }
 
 i .fa{
-  background-color: #4fa387;
+  background-color: #259753;
 }
 
 span {
@@ -119,12 +127,12 @@ span {
 }
 
 .footer_color {
-  background-color: #4fa387;
+  background-color: #259753;
   color: #ffffff;
 }
 
 .form_focus:focus {
-  border: 1px solid #4fa387;
+  border: 1px solid #32c56d;
   box-shadow: 0 0 0 0;
 }
 

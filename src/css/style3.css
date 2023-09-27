@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #4fa387;
+  background-color: #259753;
   height: 100vh;
   width: 100vw;
 }
@@ -17,7 +17,7 @@ body {
 
 h2,
 h3 {
-  color: #4fa387;
+  color: #259753;
   font-weight: bolder;
 }
 
@@ -30,12 +30,12 @@ label {
 }
 
 .botao {
-  background-color: #4fa387;
+  background-color: #259753;
   color: #ffffff;
 }
 
 .botao:hover {
-  background-color: #4fa387;
+  background-color: #2db965;
   color: #ffffff;
 }
 
@@ -44,7 +44,7 @@ label {
 }
 
 .inputs_border:focus {
-  border: 1px solid #4fa387;
+  border: 1px solid #259753;
   box-shadow: 0 0 0 0;
 }
 
@@ -54,6 +54,6 @@ label {
 
 .bg-roxo:checked {
   border: 1px solid #ffffff;
-  background-color: #4fa387;
+  background-color: #259753;
   box-shadow: 0 0 0 0;
 }

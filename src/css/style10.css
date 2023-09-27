@@ -5,7 +5,7 @@
 }
 
 .nav_cor {
-  background-color: #4fa387;
+  background-color: #259753;
 }
 
 .toggle_color {
@@ -45,7 +45,7 @@ span {
 
 .bg-roxo:checked {
   border: 1px solid #ffffff;
-  background-color: #4fa387;
+  background-color: #259753;
   box-shadow: 0 0 0 0;
 }
 
@@ -59,7 +59,7 @@ span {
 }
 
 .botao {
-  background-color: #4fa387;
+  background-color: #259753;
   color: #ffffff;
 }
 
@@ -75,7 +75,7 @@ span {
 }
 
 .footer_color {
-  background-color: #4fa387;
+  background-color: #259753;
   color: #ffffff;
 }
 

@@ -17,7 +17,7 @@
 }
 
 .selected {
-  background-color: #4fa387;
+  background-color: #259753;
   color: #fff;
 }
 
@@ -37,10 +37,14 @@
   /* overflow: scroll; */
 }
 
+.navbar, .navbar span, .navbar i{
+  color: #fff;
+}
+
 .chat-content-contact {
   display: flex;
   align-items: center;
-  background: linear-gradient(to bottom, #4fa387, transparent);
+  background: #259753;
   color: #fff;
   border-radius: 5px;
   padding: 10px;
@@ -112,7 +116,7 @@
 }
 .message {
   margin: 0;
-  background-color: #4fa387;
+  background-color: #259753;
   padding: 15px;
   max-width: 80%;
   min-width: 80%;
