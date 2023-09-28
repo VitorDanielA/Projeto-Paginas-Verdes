@@ -41,6 +41,7 @@ $(document).ready(function () {
 
   // Bind click event to the "Send" button
   $(".botao").on("click", function () {
+    console.log('clicou')
     handleSendMessage();
   });
 
@@ -182,7 +183,7 @@ function recive(message) {
 
 function getAllChatsBetweenMe() {
   const contactsbox = $("#contacts-list");
-  toggleLoader(true)
+  // toggleLoader(true)
   get("chatbetween/find/user/" + getUser().id)
     .then((chatbetlist) => {
       chatsBetween = chatbetlist;
@@ -246,11 +247,12 @@ function setSelected(clickedId) {
   $("#" + clickedId).addClass("selected");
 
   //Aqui buscar mensagens do bacno entre userTalking and getUser().id
-  toggleLoader(true)
+  const chatBox = $(".chat-box");
+      chatBox.html("");
+  toggleLoader(true, '.chat-box')  
   get("message/find/all/" + userTalking.id + "/" + getUser().id) .then((messages) => {
       // console.log("Messages", messages);
-      const chatBox = $(".chat-box");
-      chatBox.html("");
+      
 
       messages.forEach((message) => {
         let clazz = "other";

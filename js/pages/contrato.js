@@ -24,27 +24,31 @@ console.log('Other id ', otherid);
 
 let chatLoc = "chat.html";
 
-get("chatbetween/find/user/" + getUser().id + "/" + otherid)
-    .then((cb) => {
-    if (cb.id) {
-        window.location.href = chatLoc;
-    } else {
-        //criar chat bet
-        post("chatbetween/save", {
-        userOne: { id: getUser().id },
-        userTwo: { id: otherid },
-        })
-        .then((created) => {
-            if (created.id) {
+if(getUser().id == otherid){
+    showToast("Erro!", 'Você não pode iniciar um chat consigo mesmo', "danger", "bi bi-person-hearts");
+}else{
+    get("chatbetween/find/user/" + getUser().id + "/" + otherid)
+        .then((cb) => {
+        if (cb.id) {
             window.location.href = chatLoc;
-            }
+        } else {
+            //criar chat bet
+            post("chatbetween/save", {
+            userOne: { id: getUser().id },
+            userTwo: { id: otherid },
+            })
+            .then((created) => {
+                if (created.id) {
+                window.location.href = chatLoc;
+                }
+            })
+            .catch((error) => {
+                console.log("error", error);
+            });
+        }
         })
         .catch((error) => {
-            console.log("error", error);
+        console.log("error", error);
         });
     }
-    })
-    .catch((error) => {
-    console.log("error", error);
-    });
 }

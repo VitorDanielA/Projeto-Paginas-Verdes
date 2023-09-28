@@ -201,7 +201,7 @@ function toggleLoader(show, el) {
                 left: 0;
                 bottom:0;
                 min-width: 100%;
-                min-height: 100%;
+                min-height: ${hasEl ? 'auto': '100%'};
                 background-color: rgba(255, 255, 255, 0.5);
                 z-index: 9999;
             }
@@ -216,7 +216,7 @@ function toggleLoader(show, el) {
             </div>
         `;
         if(hasEl){
-            element.before(spinnerOverlay);
+            element.prepend(spinnerOverlay);
 
         }else{
             $('body').append(spinnerOverlay);
