@@ -7,7 +7,7 @@
 .nav_cor{
     background-color: #259753;
 }
-  
+
 .toggle_color {
     color: #ffffff;
 }
@@ -43,6 +43,7 @@ span{
 }
 
 .botao {
+    
     background-color: #158a42;
     color: #fff;
     font-weight: 900;
@@ -58,7 +59,7 @@ span{
 }
 
 .botao:hover {
-    background-color: #3f5f54;
+    background-color: #32c56d;
     color: #fff;
     font-weight: 200;
     border-radius: 30px;

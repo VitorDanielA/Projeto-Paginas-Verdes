@@ -17,9 +17,14 @@ i {
   color: #ffffff;
 }
 
+
 .fa_color{
   color: #259753;
   padding-right: 6px;
+}
+#botao_acesss:hover{
+  background-color: #32c56d;
+  color: #ffffff;
 }
 
 .fa_color_acess{
@@ -62,7 +67,7 @@ span {
 }
 
 .botaoFalar:hover{
-  background-color: #2fb966;
+  background-color: #32c56d;
   color: #ffffff;
 }
 
@@ -103,7 +108,7 @@ label {
 }
 
 .botao:hover {
-  background-color: #2fb966;
+  background-color: #32c56d;
   color: #ffffff;
 }
 
