@@ -38,27 +38,53 @@ span{
 
 .title_color{
     color: #ffffff;
-    font-size: 65px;
+    font-size: 62px;
     text-align: justify;
 }
 
 .botao {
     background-color: #158a42;
-    color: #000000;
+    color: #fff;
     font-weight: 900;
     border-radius: 30px;
     height: 50px;
     padding-top: 11px;
-    width: 500px;
+    margin-left: 13px;
+    width: 460px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
 }
 
 .botao:hover {
-    background-color: #5ba18a;
-    color: #000000;
+    background-color: #3f5f54;
+    color: #fff;
     font-weight: 200;
     border-radius: 30px;
     height: 50px;
     font-weight: 900;
+}
+
+.botao:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    font-size: 25px;
+    right: -20px;
+    transition: 0.5s;
+    padding: 3px 15px 0 0;
+}
+
+.botao:hover{
+    padding-right: 55px;
+    color: white;
+}
+
+.botao:hover:after {
+    opacity: 1;
+    right: 0;
 }
 
 .div_tam{
@@ -107,10 +133,11 @@ span{
 
 @media screen and (max-width: 444px){
     .botao{
-        padding-top: 0px;
+        padding-top: 11px;
+        margin-left: 8px;
     }
 
     .title_color{
-        font-size: 37px;
+        font-size: 35px;
     }
 }
