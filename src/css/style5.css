@@ -48,6 +48,10 @@
   width: 300px;
 }
 
+li a span:hover{
+  color: #adacac;
+}
+
 .searchInput:focus {
   border: 1px solid #259753;
   box-shadow: 0 0 0 0;

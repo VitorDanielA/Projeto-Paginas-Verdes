@@ -97,6 +97,10 @@ label {
   margin: 0px;
 }
 
+li a span:hover{
+  color: #adacac;
+}
+
 .botao {
   background-color: #259753;
   color: #ffffff;

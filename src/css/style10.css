@@ -33,6 +33,10 @@ span {
   color: #ffffff;
 }
 
+li a span:hover{
+  color: #adacac;
+}
+
 .strong_title {
   color: #ffffff;
   font-size: 30px;

@@ -87,6 +87,10 @@ span{
     right: 0;
 }
 
+li a span:hover{
+    color: #adacac;
+}
+
 .div_tam{
     width: 50vw;
     height: auto;
