@@ -25,7 +25,24 @@ $('#files').on('change', ()=>{
       const botaoFalar = document.getElementById("botaoFalar");
       const icon_acess = document.getElementById("icon_acess");
       const icone = document.getElementById("icone");
+      const modoDaltonismoAtivado = localStorage.getItem('daltonismo');
       var toggler = 0;
+
+      if(modoDaltonismoAtivado == 'ativado'){
+        onButton.classList.add("corPadrao");
+        botao_acess.classList.add("corPadrao");
+        botao_acess.classList.remove("botao_acesss");
+        icon_acess.classList.add("fa_color_acess");
+        onButton.classList.remove("btn-secondary");
+        navBar.classList.add("corPadrao");
+        footer.classList.add("corPadrao");
+        enviar.classList.add("corPadrao");
+        botaoFalar.classList.add("corPadrao");
+        icone.classList.add("cor_botao_acess");
+        console.log("Ativado");
+        localStorage.setItem('daltonismo', 'ativado');
+        toggler = 1;
+      }
       
 
       onButton.addEventListener("click", function () {

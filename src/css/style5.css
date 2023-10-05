@@ -48,8 +48,18 @@
   width: 300px;
 }
 
-#searchInput:focus {
+.searchInput:focus {
   border: 1px solid #259753;
+  box-shadow: 0 0 0 0;
+}
+
+.searchInputDaltonismo{
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 0;
+}
+
+.searchInputDaltonismo:focus{
+  border: 1px solid #00008B;
   box-shadow: 0 0 0 0;
 }
 
@@ -134,6 +144,27 @@ span {
 .form_focus:focus {
   border: 1px solid #32c56d;
   box-shadow: 0 0 0 0;
+}
+
+.corPadrao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corPadrao:hover{
+  background-color: #19198b;
+  color: #ffffff;
+}
+
+.corBotao{
+  color: #00008B;
+  background-color: #ffffff;
+  font-weight: 800;
+}
+
+.corBotao:hover{
+  color: #19198b;
+  background-color: #d6d6d6;
 }
 
 @media screen and (max-width: 330px) {

@@ -20,6 +20,21 @@ get('serviceOffering/all').then(serviceOfferings=>{
   toggleLoader(false)
 })
 
+const modoDaltonismoAtivado = localStorage.getItem('daltonismo');
+console.log(modoDaltonismoAtivado)
+const navBar = document.getElementById("nav_cor");
+const footer = document.getElementById("footer");
+const enviar = document.getElementById("enviar");
+const search_input = document.getElementById("searchInput");
+const search_input2 = document.getElementById("searchInput2");
+
+if(modoDaltonismoAtivado === 'ativado'){
+  navBar.classList.add("corPadrao");
+  footer.classList.add("corPadrao");
+  enviar.classList.add("corBotao");
+  search_input.classList.add("searchInputDaltonismo");
+  search_input2.classList.add("searchInputDaltonismo");
+}
 
 
 function criarDivProissional(serviceOffering, i, el){
