@@ -38,12 +38,11 @@ span{
 
 .title_color{
     color: #ffffff;
-    font-size: 62px;
+    font-size: 55px;
     text-align: justify;
 }
 
 .botao {
-    
     background-color: #158a42;
     color: #fff;
     font-weight: 900;
@@ -94,8 +93,8 @@ span{
 }
 
 .img_tam{
-    width: 95%;
-    height: auto;
+    width: 690px;
+    height: 450px;
 }
 
 .nome{

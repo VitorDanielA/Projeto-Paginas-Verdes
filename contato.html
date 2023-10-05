@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
   </head>
-  <body class="body align-items-center d-flex">
+  <body class="body align-items-center d-flex" id="body">
     <div class="container m-5 container_1">
       <strong><h1 class="pb-3">Contate-Nos</h1></strong>
       <p>
@@ -30,7 +30,7 @@
       </div>
 
       <div class="row p-0 mt-5 btn_interacao">
-        <a type="submit" class="btn botao col-6" name="btn_retornar" href="homescreen.html">Retornar</a>
+        <a type="submit" class="btn botao col-6" name="btn_retornar" href="homescreen.html" id="btn_corPadrao">Retornar</a>
       </div>
     </div>
     <div class="container rounded-2" id="containerPrincipal">
@@ -55,10 +55,12 @@
         </div>
 
         <div class="my-4">
-          <a type="submit" class="btn botao container" href="homescreen.html" name="btn_enviar">Enviar</a>
+          <a type="submit" class="btn botao container" href="homescreen.html" name="btn_enviar" id="btn_corPadrao">Enviar</a>
         </div>
       </form>
     </div>
+
+    <script src="js/pages/contato.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>

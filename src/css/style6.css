@@ -48,6 +48,26 @@ i {
   margin-left: 0px;
 }
 
+.corPadrao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corPadrao:hover{
+  background-color: #19198b;
+  color: #ffffff;
+}
+
+.corBotao{
+  color: #00008B;
+  background-color: #ffffff;
+}
+
+.corBotao:hover{
+  color: #19198b;
+  background-color: #d6d6d6;
+}
+
 @media screen and (max-width: 665px) {
   body {
     display: block;
