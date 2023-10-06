@@ -4,6 +4,46 @@
   font-family: "Roboto", sans-serif;
 }
 
+.rating {
+  font-size: 30px;
+}
+
+.star {
+  cursor: pointer;
+  color: #ccc;
+}
+
+#rating{
+  padding-left: 15px;
+}
+
+.rating2 {
+  font-size: 30px;
+}
+
+.star2 {
+  cursor: pointer;
+  color: #ccc;
+}
+
+#rating{
+  padding-left: 15px;
+}
+
+#container {
+  width: 700px;
+}
+.ck-editor__editable[role="textbox"] {
+  min-height: 100px;
+}
+.ck-content .image{
+  max-width: 80%;
+}
+
+.texto{
+  text-align:start;
+}
+
 .nav_cor {
   background-color: #259753;
 }
@@ -19,6 +59,12 @@
 
 .menu-padding {
   padding-right: 20px;
+}
+
+.title-avaliacoes{
+  color: #259753;
+  font-size: 45px;
+  font-style: italic;
 }
 
 .toggle_color {
@@ -118,5 +164,45 @@ i {
 
   .title-padding {
     padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 1150px){
+  #container{
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 991px){
+  #container{
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  #container{
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 525px){
+  .divisor{
+    flex-wrap: wrap;
+    
+  }
+
+  #container{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 280px){
+  .divisor{
+    flex-wrap: wrap;
+    
+  }
+
+  #container{
+    width: 200px;
   }
 }
