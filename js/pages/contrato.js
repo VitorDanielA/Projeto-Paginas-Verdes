@@ -52,3 +52,34 @@ if(getUser().id == otherid){
         });
     }
 }
+
+const modoDaltonismoAtivado = localStorage.getItem('daltonismo');
+const navBar = document.getElementById("nav_cor");
+const containerInfo = document.getElementById("containerInfo");
+const btnTermos = document.getElementById("btnTermos");
+const btnPerfil = document.getElementById("btnPerfil");
+const textoAvaliacao = document.getElementById("textoAvaliacao");
+const botaoContratar = document.getElementById("botaoContratar");
+const botaoChat = document.getElementById("botaoChat");
+const botaoTermos = document.getElementById("botaoTermos");
+const btnAvaliar = document.getElementById("btnAvaliar");
+var botoesFecharModal = document.querySelectorAll("#btnFecharModal");
+var botao1 = botoesFecharModal[0];
+var botao2 = botoesFecharModal[1];
+var botao3 = botoesFecharModal[2];
+
+
+if(modoDaltonismoAtivado === 'ativado'){
+    navBar.classList.add("corPadrao");
+    containerInfo.classList.add("corBackground");
+    btnPerfil.classList.add("corPadrao");
+    btnTermos.classList.add("corPadrao");
+    textoAvaliacao.classList.add("corTexto");
+    botaoChat.classList.add("corBotoes");
+    botaoContratar.classList.add("corBotoes");
+    botaoTermos.classList.add("corBotoes");
+    btnAvaliar.classList.add("corPadrao");
+    botao1.classList.add("corPadrao");
+    botao2.classList.add("corPadrao");
+    botao3.classList.add("corPadrao");
+}

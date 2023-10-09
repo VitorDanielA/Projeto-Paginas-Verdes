@@ -13,11 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
   </head>
-  <body class="body align-items-center d-flex">
+  <body class="body align-items-center d-flex" id="body">
     <div class="container rounded-2" id="containerPrincipal">
       <div class="form">
         <div>
-          <h2 class="text-center">Cadastro de usuário</h2>
+          <h2 class="text-center" id="textoCadastro">Cadastro de usuário</h2>
           <p class="text-center">Realize aqui o seu cadastro de usuário prestador de serviços na nossa plataforma.</p>
         </div>
 
@@ -112,10 +112,10 @@
 
         <div class="mt-2 row">
           <div class="col-6">
-            <input type="button" class="btn container-fluid botao" data-bs-toggle="modal" data-bs-target="#termosModal" value="Ver Termos de Uso" />
+            <input type="button" class="btn container-fluid botao" data-bs-toggle="modal" data-bs-target="#termosModal" value="Ver Termos de Uso" id="termos"/>
           </div>
           <div class="col-6">
-            <button onclick="cadastrar()" class="btn botao container-fluid" name="btn_enviar">Cadastrar</button>
+            <button onclick="cadastrar()" class="btn botao container-fluid" name="btn_enviar" id="cadastrar">Cadastrar</button>
           </div>
         </div>
       </div>
@@ -129,19 +129,19 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h2>1. Aceitação dos Termos</h2>
+            <h2 id="fraseTermo">1. Aceitação dos Termos</h2>
             <p>Ao usar este site, você concorda em cumprir estes termos de uso.</p>
 
-            <h2>2. Uso Adequado</h2>
+            <h2 id="fraseTermo">2. Uso Adequado</h2>
             <p>Você concorda em usar este site apenas para fins legais e de acordo com as leis aplicáveis.</p>
 
-            <h2>Contato</h2>
+            <h2 id="fraseTermo">Contato</h2>
             <p>Se você tiver alguma dúvida sobre estes termos de uso, entre em contato conosco.</p>
 
             <p class="text-center mt-5">Estes termos de uso foram atualizados em 28 de Agosto de 2023.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn botao" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn botao" data-bs-dismiss="modal" id="btnFecharModal">Fechar</button>
           </div>
         </div>
       </div>
@@ -151,5 +151,33 @@
     <script src="./js/pages/register.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script>
+      const modoDaltonismoAtivado = localStorage.getItem('daltonismo');
+      const body = document.getElementById("body");
+      const textoCadastro = document.getElementById("textoCadastro");
+      const termos = document.getElementById("termos");
+      const flexCheckChecked = document.getElementById("flexCheckChecked");
+      const termosModalLabel = document.getElementById("termosModalLabel");
+      const btnFecharModal = document.getElementById("btnFecharModal");
+      var cadastrar = document.getElementById("cadastrar");
+      var fraseTermos = document.querySelectorAll("#fraseTermo");
+      var frase1 = fraseTermos[0];
+      var frase2 = fraseTermos[1];
+      var frase3 = fraseTermos[2];
+
+      if(modoDaltonismoAtivado === 'ativado'){
+        body.classList.add("corBackground");
+        textoCadastro.classList.add("corTexto");
+        termos.classList.add("corPadrao");
+        cadastrar.classList.add("corPadrao");
+        flexCheckChecked.classList.add("inputs_border_daltonismo");
+        frase1.classList.add("corTexto");
+        frase2.classList.add("corTexto");
+        frase3.classList.add("corTexto");
+        termosModalLabel.classList.add("corTexto");
+        btnFecharModal.classList.add("corPadrao");
+      }
+    </script>
   </body>
 </html>

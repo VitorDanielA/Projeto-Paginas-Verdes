@@ -102,6 +102,24 @@ i.bi.bi-person.icone::before {
   text-align: justify;
 }
 
+.corBotoes{
+  color: #00008B !important;
+  background-color: #ffffff !important;
+}
+
+.corBotoes span{
+  color: #00008B !important;
+}
+
+.corBotoes i{
+  color: #00008B !important;
+}
+
+.corBotoes:hover{
+  color: #1e1e91 !important;
+  background-color: #ffffff !important;
+}
+
 .container_1 {
   font-size: large;
   background-color: #259753;
@@ -112,12 +130,12 @@ i.bi.bi-person.icone::before {
 
 .container_1 .botao {
   background-color: #ffffff;
-  color: #259753;
+  color: #86aa95;
   margin-bottom: 20px;
 }
 
 .container_1 .botao:hover {
-  background-color: #d1d0d0;
+  background-color: #f1eeee;
   color: #2eb966;
 }
 
@@ -151,6 +169,19 @@ i {
 .container_primario span {
   color: #259753;
   font-size: 16px;
+}
+
+.corPadrao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corBackground{
+  background-color: #00008B;
+}
+
+.corTexto{
+  color: #00008B;
 }
 
 @media screen and (max-width: 1027px) {

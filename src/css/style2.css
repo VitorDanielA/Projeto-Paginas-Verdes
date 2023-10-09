@@ -48,6 +48,12 @@ label {
   box-shadow: 0 0 0 0;
 }
 
+.inputs_border_daltonismo:checked{
+  border: 1px solid #ffffff !important;
+  background-color: #00008B !important;
+  box-shadow: 0 0 0 0;
+}
+
 .form {
   padding: 35px;
 }
@@ -57,3 +63,22 @@ label {
   background-color: #259753;
   box-shadow: 0 0 0 0;
 }
+
+.corPadrao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corPadrao:hover{
+  background-color: #2323b1 !important;
+  color: #ffffff;
+}
+
+.corBackground{
+  background-color: #00008B;
+}
+
+.corTexto{
+  color: #00008B;
+}
+
