@@ -64,13 +64,13 @@ function criarDivProissional(serviceOffering, i, el){
                     <!-- Slides -->
                     <div class="carousel-inner">
                         <div>
-                          <div class="star_rating" id="rating_${serviceOffering.worker.id}"> 
+                          <div class="star_rating" id="rating_${serviceOffering.id}"> 
                             <span>${serviceOffering.worker.ratingAverage} &nbsp;</span>
                           
                           </div>
                         </div>
                         <script>
-                          createStar({func:()=>{}, elId:'rating_${serviceOffering.worker.id}', starSize:20, starColor:'orange', starNumber:5, edit:false, value:${serviceOffering.worker.ratingAverage || 1}})
+                          createStar({func:()=>{}, elId:'rating_${serviceOffering.id}', starSize:20, starColor:'orange', starNumber:5, edit:false, value:${serviceOffering.worker.ratingAverage || 0}})
                         </script>
 
                         <!-- 

@@ -12,6 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Para o mapa -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.1.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.1.0/ol.css">
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg nav_cor p-3">
@@ -57,8 +62,71 @@
     </nav>
 
     <div class="d-flex align-items-center justify-content-evenly container_infos">
-      <!-- <input type="number" id="val"/> -->
-      <div id="rating_test"></div>
+      
+
+
+      <div id="map" class="map"  style="width: 500px; height: 400px;"></div>
+    <script>
+
+          function createMap(props){
+          
+            document.getElementById('map').innerHTML =''
+
+            ol.proj.useGeographic();
+            const place = [props.lon, props.lat];
+            const point = new ol.geom.Point(place);
+
+            var map = new ol.Map({
+              target: 'map',
+              view: new ol.View({
+                  center: place, // coordenadas iniciais
+                  zoom: props.zoom || 17 // nível de zoom inicial
+              }),
+              layers: [
+                new ol.layer.Tile({
+                  source: new ol.source.XYZ({
+                    url: "http://mt{0-3}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
+                  })
+                }),
+                new ol.layer.Vector({
+                  source: new ol.source.Vector({
+                    features: [new ol.Feature(point)],
+                  }),
+                  
+                  style: new ol.style.Style({
+                    image: new ol.style.Icon({
+                      anchor: [0.5, 1],
+                      src: './assets/geo-alt-fill.png', // Substitua pelo caminho da sua imagem
+                      scale: 1.4, // Ajuste o tamanho conforme necessário
+                      color:'red'
+                    }),
+                  }),
+                }),
+                
+
+              ],
+            });
+
+            // Adicione um evento de clique ao mapa
+            map.on('click', function(evt) {
+                const coord = evt.coordinate
+                console.log('Longitude', coord[0]);
+                console.log('Latitude ' ,coord[1]);
+                var zoomLevel = map.getView().getZoom();
+                createMap({lat:coord[1], lon:coord[0], zoom:zoomLevel})
+            });
+          }
+
+          createMap({lat:-11.2999988 , lon:-41.8666632, zoom:12});
+          
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var userLat = position.coords.latitude;
+            var userLon = position.coords.longitude;
+            console.log('lat lon', userLat, userLon);
+            createMap({lat:userLat, lon:userLon});
+            
+          });
+    </script>
     </div>
 
     <br />
@@ -77,18 +145,5 @@
 
     <script src="./js/pages/perfil.js"></script>
     <script src="./js/navbar.js"></script>
-    <script>
-      createStar({
-        func: (val) => {
-          console.log("val1", val);
-        },
-        elId: "rating_test",
-        starSize: 100,
-        starColor: "green",
-        starNumber: 5,
-        edit: true,
-        value: 2.3,
-      });
-    </script>
   </body>
 </html>

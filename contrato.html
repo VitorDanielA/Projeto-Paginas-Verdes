@@ -70,6 +70,9 @@
           </a>
           <a href="#" class="btn botao col-6" data-bs-toggle="modal" data-bs-target="#termosModal" id="btnTermos" ><i class="bi bi-paperclip"></i>Termos</a >
         </div>
+        <div class="star_rating" id="rating_avarage">  </div>
+        <h6 id="rating_avarage_num"></h6>
+
       </div>
 
       <div class="container_1" id="containerInfo">
@@ -193,47 +196,46 @@
 
     <h1 class="title-avaliacoes text-center my-4" id="textoAvaliacao">Avaliações</h1>
 
-    <div class="card container my-2">
-      <div class="card-body">
-        <div class="divisor d-flex">
-          <div class="image d-flex">
-            <img src="assets/ennervalenciainter.webp" width="260px" height="260px">
-          </div>
-          <div class="rating2" id="rating">
-            <span class="star2" data-value="1">&#9733;</span>
-            <span class="star2" data-value="2">&#9733;</span>
-            <span class="star2" data-value="3">&#9733;</span>
-            <span class="star2" data-value="4">&#9733;</span>
-            <span class="star2" data-value="5">&#9733;</span>
-            <h5 class="card-title">Carlos Brito</h5>
-            <h4 class="texto">Escrevo esta mensagem para expressar minha completa satisfação com o serviço excepcional que você forneceu recentemente em minha residência. Como cliente, estou verdadeiramente impressionado com sua habilidade, profissionalismo e comprometimento.</p>
-          </div>  
-        </div>      
-      </div>
-    </div>
+    <div id="avaliacoes">
+      <!-- <div class="card container my-2">div class="card container my-2">
+        <div class="card-body">
+          <div class="divisor d-flex">
+            <div class="image d-flex">
+              <img src="assets/ennervalenciainter.webp" width="260px" height="260px">
+            </div>
+            <div class="rating2" id="rating">
+              <span class="star2" data-value="1">&#9733;</span>
+              <span class="star2" data-value="2">&#9733;</span>
+              <span class="star2" data-value="3">&#9733;</span>
+              <span class="star2" data-value="4">&#9733;</span>
+              <span class="star2" data-value="5">&#9733;</span>
+              <h5 class="card-title">Carlos Brito</h5>
+              <h4 class="texto">Escrevo esta mensagem para expressar minha completa satisfação com o serviço excepcional que você forneceu recentemente em minha residência. Como cliente, estou verdadeiramente impressionado com sua habilidade, profissionalismo e comprometimento.</p>
+            </div>  
+          </div>      
+        </div>
+      </div> -->
 
-    <div class="card container my-3">
+    </div>
+    <div class="card container my-3" id="make_rate">
       <div class="card-body">
         <div class="divisor d-flex">
           <div class="image d-flex">
-            <img src="assets/tiquinho-soares-do-botafogo-comemora-contra-o-fortaleza-pelo-brasileirao-1686448131563_v2_1920x1279.jpg" width="260px" height="260px">
+            <img id="rater_image" src="assets/tiquinho-soares-do-botafogo-comemora-contra-o-fortaleza-pelo-brasileirao-1686448131563_v2_1920x1279.jpg" width="260px" height="260px">
           </div>
           <div class="rating" id="rating">
-            <span class="star" data-value="1">&#9733;</span>
-            <span class="star" data-value="2">&#9733;</span>
-            <span class="star" data-value="3">&#9733;</span>
-            <span class="star" data-value="4">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-            <h5 class="card-title">Leonam Nunes</h5>
+            <div class="star_rating" id="rating_new"></div>
+            
+            <h5 class="card-title" id="rater_name">Leonam Nunes</h5>
             <div id="container">
               <div id="editor"></div>
             </div>
-            <a href="#" class="btn botao" id="btnAvaliar">Avaliar <i class="bi bi-arrow-right"></i></a>
+            <button id="avaliar_btn" class="btn botao" id="btnAvaliar">Avaliar <i class="bi bi-arrow-right"></i></button>
           </div>  
         </div>      
       </div>
     </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
     <script>
@@ -309,5 +311,6 @@
     <script src="./js/requisitions.js"></script>
     <script src="./js/navbar.js"></script>
     <script src="./js/pages/contrato.js"></script>
+
   </body>
 </html>
