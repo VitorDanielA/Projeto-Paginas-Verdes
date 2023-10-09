@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
   </head>
-  <body class="body align-items-center d-flex">
+  <body class="body align-items-center d-flex" id="body">
     <div class="container rounded-2" id="containerPrincipal">
       <form class="p-5" action="#">
-        <h1 class="text-center">Esqueci minha senha</h1>
+        <h1 class="text-center" id="legendaSenha">Esqueci minha senha</h1>
         <p class="mt-1">
           Não se preocupe, estamos aqui para ajudar! Insira seu endereço de
           e-mail registrado abaixo, e enviaremos instruções detalhadas sobre
@@ -23,20 +23,37 @@
 
         <div class="mt-1">
           <label class="form-label">Email</label>
-          <input type="email" class="form-control inputs_border" name="f_email" placeholder="mariobros@gmail.com" />
+          <input type="email" class="form-control inputs_border" name="f_email" placeholder="mariobros@gmail.com" id="inputs_border"/>
         </div>
 
-        <div class="alert alert-success alert-dismissible fade show mt-3 alerta_p">
+        <div class="alert alert-success alert-dismissible fade show mt-3 alerta_p" id="alerta">
           <button class="btn-close" data-bs-dismiss="alert"></button>
           Lembre-se de digitar o email cadastrado corretamente!
         </div>
 
         <div class="mt-4">
-          <a href="esqueceuSenha2.html" type="submit" class="btn botao container-fluid a_input" name="btn_recuperar">RECUPERAR</a>
+          <a href="esqueceuSenha2.html" type="submit" class="btn botao container-fluid a_input" name="btn_recuperar" id="botaoRecuperar">RECUPERAR</a>
         </div>
       </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script>
+      const modoDaltonismoAtivado = localStorage.getItem('daltonismo');
+      const body = document.getElementById("body");
+      const botaoRecuperar = document.getElementById("botaoRecuperar");
+      const alerta = document.getElementById("alerta");
+      const legendaSenha = document.getElementById("legendaSenha");
+      const inputs_border = document.getElementById("inputs_border");
+
+      if(modoDaltonismoAtivado === 'ativado'){
+          body.classList.add("corPadrao");
+          botaoRecuperar.classList.add("corBotao");
+          alerta.classList.add("corPadrao");
+          legendaSenha.classList.add("corTextoDaltonismo");
+          inputs_border.classList.add("inputs_border_daltonismo");
+      }
+    </script>
   </body>
 </html>

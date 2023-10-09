@@ -21,7 +21,6 @@ get('serviceOffering/all').then(serviceOfferings=>{
 })
 
 const modoDaltonismoAtivado = localStorage.getItem('daltonismo');
-console.log(modoDaltonismoAtivado)
 const navBar = document.getElementById("nav_cor");
 const footer = document.getElementById("footer");
 const enviar = document.getElementById("enviar");

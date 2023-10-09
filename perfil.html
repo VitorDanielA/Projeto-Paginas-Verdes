@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg nav_cor p-3">
+    <nav class="navbar navbar-expand-lg nav_cor p-3" id="nav_cor">
       <div class="container-fluid">
         <a class="navbar-brand title-padding" href="#">
           <strong class="strong_title">Páginas Verdes</strong>
@@ -66,8 +66,8 @@
             <p class="text-muted mb-4" id="empresa_cidade">IFBA, Irecê, BA</p>
 
             <div class="d-flex justify-content-center mb-2">
-              <button type="button" class="btn botao bordas_botoes"><i class="bi bi-pen m-1"></i>Editar</button>
-              <button type="button" class="btn botao ms-1"><i class="bi bi-trash m-1"></i>Excluir</button>
+              <button type="button" class="btn botao bordas_botoes" id="btn_edit"><i class="bi bi-pen m-1"></i>Editar</button>
+              <button type="button" class="btn botao ms-1" id="btn_excluir"><i class="bi bi-trash m-1"></i>Excluir</button>
             </div>
 
           </div>
@@ -129,7 +129,7 @@
     <br />
     <br />
 
-    <footer class="flex py-4 footer_color">
+    <footer class="flex py-4 footer_color" id="footer">
       <div class="container text-center">
         <small>Páginas Verdes &copy; 2023</small>
       </div>

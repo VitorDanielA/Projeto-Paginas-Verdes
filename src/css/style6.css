@@ -59,13 +59,13 @@ i {
 }
 
 .corBotao{
-  color: #00008B;
-  background-color: #ffffff;
+  color: #00008B !important;
+  background-color: #ffffff !important;
 }
 
 .corBotao:hover{
-  color: #19198b;
-  background-color: #d6d6d6;
+  color: #19198b !important;
+  background-color: #e0e0e0 !important;
 }
 
 @media screen and (max-width: 665px) {

@@ -161,14 +161,27 @@ span {
 }
 
 .corBotao{
-  color: #00008B;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #00008B;
   font-weight: 800;
 }
 
+.corAleatoria{
+  background-color: #00008B !important;
+  font-weight: 100;
+}
+
 .corBotao:hover{
-  color: #19198b;
-  background-color: #d6d6d6;
+  color: #ffffff;
+  background-color: #1a1ac9;
+}
+
+.corText{
+  color: #00008B !important;
+}
+
+.corTextName{
+  color: #ffffff !important;
 }
 
 @media screen and (max-width: 330px) {
@@ -246,8 +259,4 @@ span {
   padding: 0 5px 5px 5px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   border-radius: 10px 0 10px 0;
-}
-
-div:has(.star_rating) {
-  
 }

@@ -12,10 +12,10 @@
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
-  <body class="body align-items-center d-flex">
+  <body class="body align-items-center d-flex" id="body">
     <div class="container rounded-2" id="containerPrincipal">
       <div class="p-5">
-        <h1 class="text-center">Login</h1>
+        <h1 class="text-center" id="corLegenda">Login</h1>
         <p>Seja bem vindo, encontre aqui prestadores de serviços ou venha ser um também.</p>
         <div class="my-1">
           <label class="form-label">Nome de Usuário</label>
@@ -39,11 +39,11 @@
         <div class="my-4 d-flex justify-content-between">
           <p>Novo usuário?
             <strong class="cadastrar">
-              <a href="escolha.html">Cadastre-se</a>
+              <a href="escolha.html" id="corCadastre">Cadastre-se</a>
             </strong>
           </p>
           <p class="cadastrar">
-            <a href="esqueceuSenha.html">Esqueceu a senha?</a>
+            <a href="esqueceuSenha.html" id="corSenha">Esqueceu a senha?</a>
           </p>
         </div>
       </div>
@@ -55,6 +55,29 @@
     <script src="./js/requisitions.js"></script>
 
     <script>
+
+    const modoDaltonismoAtivado = localStorage.getItem('daltonismo');
+    const body = document.getElementById("body");
+    const botao = document.getElementById("btn_enviar");
+    const frase = document.getElementById("corLegenda");
+    const fraseCadastre = document.getElementById("corCadastre");
+    const fraseSenha = document.getElementById("corSenha");
+    const checkbox = document.getElementById("flexCheckChecked");
+    var bordas = document.querySelectorAll(".inputs_border");
+    var primeiroInput = bordas[0];
+    var segundoInput = bordas[1];
+
+    if(modoDaltonismoAtivado === 'ativado'){
+        body.classList.add("corPadrao");
+        botao.classList.add("corBotao");
+        frase.classList.add("corLegenda");
+        fraseCadastre.classList.add("corLegenda");
+        fraseSenha.classList.add("corLegenda");
+        checkbox.classList.add("flexCheckCheckedDaltonismo");
+        primeiroInput.classList.add("inputs_border_daltonismo");
+        segundoInput.classList.add("inputs_border_daltonismo");
+    }  
+
       function makeLogin() {
         let username = $("#username").val();
         let password = $("#password").val();

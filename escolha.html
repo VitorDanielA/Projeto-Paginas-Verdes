@@ -13,7 +13,7 @@
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
   </head>
   <body class="">
-    <nav class="navbar navbar-expand-lg nav_cor p-3">
+    <nav class="navbar navbar-expand-lg nav_cor p-3" id="nav_cor">
       <div class="container-fluid">
         <a class="navbar-brand title-padding" href="homescreen.html">
           <strong class="strong_title">Páginas Verdes</strong>
@@ -45,7 +45,7 @@
     </nav>
 
     <div class="container-fluid mt-4">
-      <a class="btn btn_color ms-3" href="./index.html">
+      <a class="btn btn_color ms-3" href="./index.html" id="btnVoltar">
         <i class="bi bi-arrow-left"></i>Voltar
       </a>
     </div>
@@ -54,9 +54,9 @@
       <div class="card my-3 border-0">
         <img src="assets/Bascic User.png" class="card-img" />
         <div class="card-body">
-          <h5 class="card-title text-center">Usuário Padrão</h5>
+          <h5 class="card-title text-center" id="legendaUsuarios1">Usuário Padrão</h5>
           <div class="text-center">
-            <a href="register2.html" class="btn btn_color col-6 align-items-center">
+            <a href="register2.html" class="btn btn_color col-6 align-items-center" id="btnSelecionar1">
               <i class="bi bi-check"></i>Selecionar
             </a>
           </div>
@@ -66,9 +66,9 @@
       <div class="card border-0">
         <img src="assets/Employee User.png" class="card-img img_trabalhador" style="width: 317px; height: 318px" />
         <div class="card-body">
-          <h5 class="card-title text-center">Usuário Profissional</h5>
+          <h5 class="card-title text-center" id="legendaUsuarios2">Usuário Profissional</h5>
           <div class="text-center">
-            <a href="register.html" class="btn btn_color col-6 align-items-center">
+            <a href="register.html" class="btn btn_color col-6 align-items-center" id="btnSelecionar2">
               <i class="bi bi-check"></i>Selecionar
             </a>
           </div>
@@ -76,11 +76,13 @@
       </div>
     </div>
 
-    <footer class="text-center footer_color py-3 mt-4">
+    <footer class="text-center footer_color py-3 mt-4" id="footer">
       <div class="container">
         <small>Páginas Verdes &copy; 2023</small>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script src="js/pages/escolha.js"></script>
   </body>
 </html>

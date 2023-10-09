@@ -63,9 +63,33 @@ a:hover {
   box-shadow: 0 0 0 0;
 }
 
+.inputs_border_daltonismo:focus {
+  border: 1px solid #00008B;
+  box-shadow: 0 0 0 0;
+}
+
 .alerta_p {
   background-color: #259753;
   color: #ffffff;
+}
+
+.corPadrao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corBotao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corBotao:hover{
+  background-color: #0404ce !important;
+  color: #ffffff !important;
+}
+
+.corTextoDaltonismo{
+  color: #00008B;
 }
 
 @media screen and (max-width: 427px) {

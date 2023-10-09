@@ -59,9 +59,25 @@ a:hover {
   box-shadow: 0 0 0 0;
 }
 
+.inputs_border_daltonismo{
+  border: 1px solid #dcdcdc;
+  height: 50px;
+}
+
+.inputs_border_daltonismo:focus{
+  border: 1px solid #00008B;
+  box-shadow: 0 0 0 0;
+}
+
 .bg-roxo:checked {
   border: 1px solid #ffffff;
   background-color: #259753;
+  box-shadow: 0 0 0 0;
+}
+
+.flexCheckCheckedDaltonismo:checked{
+  border: 1px solid #ffffff;
+  background-color: #00008B;
   box-shadow: 0 0 0 0;
 }
 
@@ -69,4 +85,32 @@ a:hover {
 .span_margin {
   cursor: pointer;
   color: #4fa387;
+}
+
+.corPadrao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corPadrao:hover{
+  background-color: #19198b;
+  color: #ffffff;
+}
+
+.corBotao{
+  color: #ffffff;
+  background-color: #00008B;
+}
+
+.corBotao:hover{
+  color: #ffffff;
+  background-color: #0606c4;
+}
+
+.corLegenda{
+  color: #00008B;
+}
+
+.corLegenda:hover{
+  color: #19198b;
 }

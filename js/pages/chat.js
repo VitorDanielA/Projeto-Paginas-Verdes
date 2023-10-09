@@ -1,3 +1,25 @@
+const modoDaltonismoAtivado = localStorage.getItem('daltonismo');
+const navBar = document.getElementById("nav_cor");
+const footer = document.getElementById("footer");
+const takler_image = document.getElementById("takler_image");
+const toggleContacts = document.getElementById("toggleContacts");
+const talker_name = document.getElementById("talker_name");
+const enviar = document.getElementById("enviar");
+var corTexto = document.querySelectorAll("#corTexto");
+var corTexto1 = corTexto[0];
+var corTexto2 = corTexto[1];
+
+if(modoDaltonismoAtivado === 'ativado'){
+  navBar.classList.add("corPadrao");
+  footer.classList.add("corPadrao");
+  takler_image.classList.add("corAleatoria")
+  toggleContacts.classList.add("corPadrao");
+  enviar.classList.add("corPadrao");
+  talker_name.classList.add("corTextName");
+  corTexto1.classList.add("corText");
+  corTexto2.classList.add("corText");
+}
+
 var chatsBetween = [];
 var userTalking = {};
 

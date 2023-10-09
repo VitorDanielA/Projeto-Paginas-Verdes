@@ -13,7 +13,7 @@
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg nav_cor p-3">
+    <nav class="navbar navbar-expand-lg nav_cor p-3" id="nav_cor">
       <div class="container-fluid">
         <a class="nome"><strong></strong></a>
         <a class="navbar-brand title-padding" href="homescreen.html">
@@ -101,18 +101,18 @@
     <div class="container d-flex">
       <div class="my-3" style="width: 700px">
         <label class="form-label">Comentário*</label>
-        <textarea class="form-control inputs_border largura_textarea" rows="6" placeholder="Digite a sua mensagem"></textarea>
+        <textarea class="form-control inputs_border largura_textarea" rows="6" placeholder="Digite a sua mensagem" id="inputs_border"></textarea>
         <label class="form-label mt-1">Forneça o máximo de detalhes e precisão possível, mas não compartilhe
           <br />
           informações sensíveis.</label>
       </div>
 
       <div class="my-4">
-        <a type="submit" class="btn botao botao_margin" href="homescreen.html" name="btn_enviar">Enviar</a>
+        <a type="submit" class="btn botao botao_margin" href="homescreen.html" name="btn_enviar" id="btn_enviar">Enviar</a>
       </div>
     </div>
 
-    <footer class="text-center footer_color py-3 mt-4">
+    <footer class="text-center footer_color py-3 mt-4" id="footer">
       <div class="container">
         <small>Páginas Verdes &copy; 2023</small>
       </div>
@@ -120,5 +120,30 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"
     ></script>
+
+    <script>
+      
+      const modoDaltonismoAtivado = localStorage.getItem('daltonismo');
+      const navBar = document.getElementById("nav_cor");
+      const footer = document.getElementById("footer");
+      const inputs_border = document.getElementById("inputs_border");
+      const btn_enviar = document.getElementById("btn_enviar");
+      var checkbox = document.querySelectorAll("#flexCheckChecked");
+      var checkbox1 = checkbox[0];
+      var checkbox2 = checkbox[1];
+      var checkbox3 = checkbox[2];
+      var checkbox4 = checkbox[3];
+
+      if(modoDaltonismoAtivado === 'ativado'){
+        navBar.classList.add("corPadrao");
+        footer.classList.add("corPadrao");
+        inputs_border.classList.add("inputs_border_daltonismo");
+        btn_enviar.classList.add("corBotao");
+        checkbox1.classList.add("flexCheckCheckedDaltonismo");
+        checkbox2.classList.add("flexCheckCheckedDaltonismo");
+        checkbox3.classList.add("flexCheckCheckedDaltonismo");
+        checkbox4.classList.add("flexCheckCheckedDaltonismo");
+      }
+    </script>
   </body>
 </html>

@@ -88,6 +88,36 @@ li a span:hover{
   text-decoration: none;
 }
 
+.inputs_border_daltonismo:focus {
+  border: 1px solid #00008B;
+  box-shadow: 0 0 0 0;
+}
+
+.corPadrao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corBotao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corBotao:hover{
+  background-color: #0404ce !important;
+  color: #ffffff !important;
+}
+
+.corTextoDaltonismo{
+  color: #00008B;
+}
+
+.flexCheckCheckedDaltonismo:checked{
+  border: 1px solid #ffffff;
+  background-color: #00008B;
+  box-shadow: 0 0 0 0;
+}
+
 @media screen and (max-width: 330px) {
   .title-padding {
     padding-left: 1px;

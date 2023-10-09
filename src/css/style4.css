@@ -43,6 +43,25 @@ i {
   color: #ffffff;
 }
 
+.corPadrao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corBotao{
+  background-color: #00008B !important;
+  color: #ffffff !important;
+}
+
+.corBotao:hover{
+  background-color: #0404ce !important;
+  color: #ffffff !important;
+}
+
+.corLegenda{
+  color: #00008B !important;
+}
+
 @media screen and (max-width: 681px) {
   .container_users {
     display: block;
