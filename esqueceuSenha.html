@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
   </head>
   <body class="body align-items-center d-flex" id="body">
     <div class="container rounded-2" id="containerPrincipal">
@@ -23,7 +25,7 @@
 
         <div class="mt-1">
           <label class="form-label">Email</label>
-          <input type="email" class="form-control inputs_border" name="f_email" placeholder="mariobros@gmail.com" id="inputs_border"/>
+          <input type="email" class="form-control inputs_border" id="f_email"  placeholder="mariobros@gmail.com" />
         </div>
 
         <div class="alert alert-success alert-dismissible fade show mt-3 alerta_p" id="alerta">
@@ -32,7 +34,7 @@
         </div>
 
         <div class="mt-4">
-          <a href="esqueceuSenha2.html" type="submit" class="btn botao container-fluid a_input" name="btn_recuperar" id="botaoRecuperar">RECUPERAR</a>
+          <a href="esqueceuSenha2.html" class="btn botao container-fluid a_input" id="btn_recuperar">RECUPERAR</a>
         </div>
       </form>
     </div>
@@ -55,5 +57,16 @@
           inputs_border.classList.add("inputs_border_daltonismo");
       }
     </script>
+
+    
+    <script src="./js/session.js"></script>
+    <script src="./js/requisitions.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script>
+        $('#f_email').on('keyup', ()=>{
+          $('#btn_recuperar').attr('href', 'esqueceuSenha2.html?f_email=' + $('#f_email').val())
+        })
+    </script>
+
   </body>
 </html>

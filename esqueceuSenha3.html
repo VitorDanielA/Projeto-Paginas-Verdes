@@ -10,10 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
   </head>
   <body class="body align-items-center d-flex" id="body">
     <div class="container rounded-2" id="containerPrincipal">
-      <form class="p-5" action="#">
+      <div class="p-5" >
         <h1 class="text-center" id="legendaSenha">Esqueci minha senha</h1>
         <p class="mt-1">
           Insira a sua nova senha abaixo. Certifique-se de escolher uma senha
@@ -23,18 +25,18 @@
 
         <div class="mt-1">
           <label class="form-label">Nova senha</label>
-          <input type="password" class="form-control inputs_border" name="f_senha" placeholder="*************" />
+          <input type="password" class="form-control inputs_border" id="f_senha" placeholder="*************" />
         </div>
 
         <div class="mt-1">
           <label class="form-label">Confirmar senha</label>
-          <input type="password" class="form-control inputs_border" name="f_confirmarSenha" placeholder="*************" />
+          <input type="password" class="form-control inputs_border" id="f_confirmarSenha" placeholder="*************" />
         </div>
 
         <div class="mt-4">
-          <a href="index.html" type="submit" class="btn botao container-fluid a_input" name="btn_recuperar" id="botaoRecuperar">MUDAR SENHA</a>
+          <button class="btn botao container-fluid a_input" name="btn_recuperar" id="botaoRecuperar">MUDAR SENHA</button>
         </div>
-      </form>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -55,6 +57,57 @@
           input1.classList.add("inputs_border_daltonismo");
           input2.classList.add("inputs_border_daltonismo");
       }
+    </script>
+
+    <script src="./js/session.js"></script>
+    <script src="./js/requisitions.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script>
+      const id = getParameterFromUrl('id')
+      $('#f_senha').on('keyup', ()=>{
+        let s = $('#f_senha').val()
+        let s2 = $('#f_confirmarSenha').val()
+        if(s != s2){          
+          $('#f_confirmarSenha').addClass('is-invalid')
+        }else{
+          $('#f_confirmarSenha').removeClass('is-invalid')
+        }
+        
+      })
+      
+      $('#f_confirmarSenha').on('keyup', ()=>{
+        let s = $('#f_senha').val()
+        let s2 = $('#f_confirmarSenha').val()
+        if(s != s2){          
+          $('#f_confirmarSenha').addClass('is-invalid')
+        }else{
+          $('#f_confirmarSenha').removeClass('is-invalid')
+        }
+      })
+
+      $('#botaoRecuperar').on('click', ()=>{
+        let s = $('#f_senha').val()
+
+        let usr = {id:id, password:s}
+
+        toggleLoader(true)
+        post('user/update', usr).then(saved => {
+              
+              showToast(
+                  "Salvo com sucesso!",
+                  `Anúncio ${saved.name} salvo com sucesso`,
+                  "success",
+                  "bi bi-check-circle-fill"
+              );      
+              toggleLoader(false)      
+              window.location.href = 'index.html'
+          }).catch(error => {
+              console.log('erro ', error)
+              showToast("Erro ao salvar", error, "danger", "bi bi-bug-fill");
+              toggleLoader(false)
+      
+          })
+      })
     </script>
   </body>
 </html>

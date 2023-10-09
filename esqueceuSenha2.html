@@ -10,11 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
   </head>
 
   <body class="body align-items-center d-flex" id="body">
     <div class="container rounded-2" id="containerPrincipal">
-      <form class="p-5" action="#">
+      <div class="p-5" >
         <h1 class="text-center" id="legendaSenha">Esqueci minha senha</h1>
         <p class="mt-1">
           Digite o código de verificação que foi enviado para o seu e-mail. Esse
@@ -22,20 +24,20 @@
           permitirá que você prossiga com o processo de recuperação de senha.
         </p>
 
-        <p>Um código foi enviado para mariobros@gmail.com</p>
+        <p id="recived_email">Um código foi enviado para </p>
 
         <div class="row">
           <div class="col-3">
-            <input type="text" class="form-control inputs_border" />
+            <input type="text" class="form-control inputs_border" id="cd_1"/>
           </div>
           <div class="col-3">
-            <input type="text" class="form-control inputs_border" />
+            <input type="text" class="form-control inputs_border" id="cd_2"/>
           </div>
           <div class="col-3">
-            <input type="text" class="form-control inputs_border" />
+            <input type="text" class="form-control inputs_border" id="cd_3"/>
           </div>
           <div class="col-3">
-            <input type="text" class="form-control inputs_border" />
+            <input type="text" class="form-control inputs_border" id="cd_4"/>
           </div>
         </div>
 
@@ -45,9 +47,9 @@
         </div>
 
         <div class="mt-4">
-          <a href="esqueceuSenha3.html" type="submit" class="btn botao container-fluid a_input" name="btn_recuperar" id="botaoRecuperar">CONFIRMAR</a>
+          <button type="submit" class="btn botao container-fluid a_input" name="btn_recuperar" id="botaoRecuperar">CONFIRMAR</button>
         </div>
-      </form>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -74,6 +76,46 @@
           input3.classList.add("inputs_border_daltonismo");
           input4.classList.add("inputs_border_daltonismo");
       }
+    </script>
+
+    <script src="./js/session.js"></script>
+    <script src="./js/requisitions.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script>
+      const email = getParameterFromUrl('f_email')
+
+      $('#recived_email').html('Um código foi enviado para '+email)
+
+      $('#cd_1').on('keyup', ()=>{
+        $("#cd_2").focus()
+      })
+
+      $('#cd_2').on('keyup', ()=>{
+        $("#cd_3").focus()
+      })
+
+      $('#cd_3').on('keyup', ()=>{
+        $("#cd_4").focus()
+      })
+
+      $('#botaoRecuperar').on('click', ()=>{
+        let code = $('#cd_1').val() + $('#cd_2').val() + $('#cd_3').val() + $('#cd_4').val() 
+        
+        if(code == '1234'){
+          get('user/find/email/'+email).then(user=>{
+            let url ="esqueceuSenha3.html?id="+user.id
+            console.log('Url', url)
+            window.location.href = url
+
+          }).catch(err=>{
+            showToast("Usuário não existe", 'O usuário não existe para o email informado', "danger", "bi bi-bug-fill");
+          })
+
+        }else{
+          showToast("Código incorreto", 'O código informado não está correto', "warning", "bi bi-bug-fill");
+
+        }
+      })
     </script>
   </body>
 </html>
