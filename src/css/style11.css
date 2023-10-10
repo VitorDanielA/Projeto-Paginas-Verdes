@@ -121,6 +121,16 @@ li a span:hover{
   color: #ffffff;
 }
 
+p{
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+i.bi.bi-facebook::before, i.bi.bi-twitter::before, i.bi.bi-instagram::before{
+  color: #ffffff !important;
+  padding: 5px;
+}
+
 .corDaltonismo{
   background-color: #4fa387;
   color: #ffffff;

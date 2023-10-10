@@ -93,6 +93,16 @@ li a span:hover{
   box-shadow: 0 0 0 0;
 }
 
+p{
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+i.bi.bi-facebook::before, i.bi.bi-twitter::before, i.bi.bi-instagram::before{
+  color: #ffffff !important;
+  padding: 5px;
+}
+
 .corPadrao{
   background-color: #00008B !important;
   color: #ffffff !important;
