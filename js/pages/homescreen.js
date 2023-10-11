@@ -49,9 +49,9 @@ function criarDivProissional(serviceOffering, i, el){
                   data-holder-rendered="true"
                 />
                 <div>
-                  <strong class="d-block text-gray-dark mt-2">${serviceOffering.worker.name}</strong>
-                  <strong class="d-block text-gray-dark mt-2">${serviceOffering.name}</strong>
-                  <strong class="d-block text-gray-dark mb-1">${serviceOffering.worker.work}</strong>
+                  <strong class="d-block text-gray-dark ">${serviceOffering.worker.name}</strong>
+                  <strong class="d-block text-gray-dark ">${serviceOffering.name}</strong>
+                  <strong class="d-block text-gray-dark ">${serviceOffering.worker.work}</strong>
                 </div>
                 
               </div>
@@ -84,15 +84,15 @@ function criarDivProissional(serviceOffering, i, el){
                         <span class="carousel-control-prev-icon"></span>
                     </a>
                     <a class="carousel-control-next" href="#carroussel${i}" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
+                        <span class="carousel-control-next-icon bg-success"></span>
                     </a>
                 </div>
-                <p class="media-body pb-3 mb-0 small border-bottom border-gray">
+                <p class="media-body pb-3 mb-0 small border-bottom border-gray my-4">
                   ${serviceOffering.description}
                 <br />
                 <a
                   href="contrato.html?id=${serviceOffering.worker.id}"
-                  class="btn mt-2 botao"
+                  class="btn mt-3 botao"
                   style="flex-wrap: wrap"
                   ><i class="bi bi-person-fill icone nome_navbar"></i> Perfil</a
                 >

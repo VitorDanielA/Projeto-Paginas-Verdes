@@ -83,7 +83,7 @@
         let password = $("#password").val();
 
         $("#btn_enviar").append(
-          '<span class="spinner-border spinner-border-sm" role="status" id="spinner_login" aria-hidden="true"></span>'
+          '<span class="spinner-border spinner-border-sm ms-2" role="status" id="spinner_login" aria-hidden="true"></span>'
         );
         login_user(username, password)
           .then((user) => {
@@ -95,7 +95,9 @@
               "bi bi-check-circle-fill"
             );
 
-            window.location.href = "./homescreen.html";
+            setTimeout(() => {
+              window.location.href = "./homescreen.html";
+            }, 2000)
           })
           .catch((error) => {
             showToast("Erro ao fazer login", error, "danger", "bi bi-bug-fill");

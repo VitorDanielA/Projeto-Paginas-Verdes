@@ -258,7 +258,7 @@ i.bi.bi-facebook::before, i.bi.bi-twitter::before, i.bi.bi-instagram::before{
 /* Estilize os controles de navegação */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #007bff;
+  background-color: #259753 !important;
 }
 
 
@@ -274,4 +274,32 @@ i.bi.bi-facebook::before, i.bi.bi-twitter::before, i.bi.bi-instagram::before{
   padding: 0 5px 5px 5px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   border-radius: 10px 0 10px 0;
+}
+
+.nome{
+  display: flex;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1050px) {
+  .div_tam {
+    display: none;
+  }
+
+  .strong_title {
+      display: none;
+  }
+
+  .title_color{
+      font-size: 50px;
+  }
+
+  .nome::after {
+      display: block;
+      content: "PV";
+      color: #ffffff;
+      font-size: 30px;
+      text-decoration: none;
+  }
+
 }

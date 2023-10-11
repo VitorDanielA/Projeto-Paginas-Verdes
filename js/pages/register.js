@@ -38,8 +38,10 @@ function cadastrar(){
             "success",
             "bi bi-check-circle-fill"
         );
-
-        window.location.href = 'index.html'
+        
+        setTimeout(() => {
+            window.location.href = 'index.html'
+        }, 3000)
     }).catch(error=>{
         console.log('Error' , error)
 

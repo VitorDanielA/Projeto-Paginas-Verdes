@@ -42,12 +42,30 @@ a:hover {
   background-color: #259753;
   color: #ffffff;
   height: 50px;
+  color: #fff;
+  letter-spacing: 0.2em;
+  transition: all 0.3s ease-in-out;
 }
 
-.botao:hover {
-  background-color: #32c56d;
-  color: #ffffff;
-}
+.botao:hover{
+  color: #ddf1eb;
+  background-color: #237040;
+  animation: scaleUp 0.3s ease-in-out;
+ }
+ 
+ @keyframes scaleUp {
+  0% {
+   transform: scale(1);
+  }
+ 
+  50% {
+   transform: scale(0.98);
+  }
+ 
+  100% {
+   transform: scale(1);
+  }
+ }
 
 .inputs_border {
   border: 1px solid #dcdcdc;
