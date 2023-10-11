@@ -92,7 +92,7 @@ const headers = {
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("parentId", pi);
+    if(pi){formData.append("parentId", pi)};
 
 
     const customHeaders = {}

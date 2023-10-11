@@ -20,8 +20,11 @@
           <h2 class="text-center" id="textoCadastro">Cadastro de usuário</h2>
           <p class="text-center">Realize aqui o seu cadastro de usuário prestador de serviços na nossa plataforma.</p>
         </div>
-
-        <div class="row">
+        <div class="row row_pic">
+          <div class="col-md-6   profile_picture_upload">
+            <p id="pictureInstructive">Selecione uma foto</p>
+            <input type="file" id="uploadInput" accept="image/*" style="display: none;">
+          </div>
           <div class="col">
             <label class="">Nome Completo</label>
             <input type="text" name="nome_completo" class="form-control inputs_border" placeholder="Digite seu nome completo" />
@@ -180,5 +183,32 @@
         btnFecharModal.classList.add("corPadrao");
       }
     </script>
+
+    <script>
+        const $imageUpload = $('.profile_picture_upload');
+        const $uploadInput = $('#uploadInput');
+        const $imagePreview = $('#imagePreview');
+
+        $imageUpload.click(function () {
+          $uploadInput[0].click();
+        });
+
+        $uploadInput.change(function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    if($("#imagePreview").length){
+                      $("#imagePreview").remove();
+                    }
+                    $imageUpload.append(`<img id="imagePreview" src="${e.target.result}" alt="${file.name}">`)
+
+                    $('#pictureInstructive').remove()
+
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+  </script>
   </body>
 </html>

@@ -23,23 +23,46 @@ function cadastrar(){
 
     console.log('user ', newUser)
 
-    post('user/save', newUser).then(success=>{
-        console.log('Success ', success)
-        alert('Salvo!')
-        showToast(
-            "Salvo com sucesso!",
-            `Bem vindo ao Páginas Verdes, ${success.name}!`,
-            "success",
-            "bi bi-check-circle-fill"
-          );
-        // window.location.reload()
+    toggleLoader(true)
+    post('user/save', newUser).then(user=>{
+        console.log('Success ', user)
+
+        upload_file($('#uploadInput').prop('files')[0]).then(file=>{
+            user.profilePicture ={id:file.id};
+
+            post('user/update', user).then(updated_user=>{
+                toggleLoader(false)
+
+                showToast(
+                    "Salvo com sucesso!",
+                    `Bem vindo ao páginas verdes, ${updated_user.name}!`,
+                    "success",
+                    "bi bi-check-circle-fill"
+                );
+
+                setTimeout(() => {
+                    window.location.href = 'index.html'
+                }, 3000)
+
+            }).catch(err=>{
+                showToast("Erro ao salvar", err, "danger", "bi bi-bug-fill");
+                toggleLoader(false)
+
+            })
+            
+            
+        }).catch(err=>{
+            showToast("Erro ao salvar", err, "danger", "bi bi-bug-fill");
+            toggleLoader(false)
+
+
+        })
+        
     }).catch(error=>{
         console.log('Error' , error)
-
         // alert('Error' + error)
         showToast("Erro ao salvar", error, "danger", "bi bi-bug-fill");
-
+        toggleLoader(false)
 
     })
-
 }

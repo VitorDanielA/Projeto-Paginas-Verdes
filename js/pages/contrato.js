@@ -57,7 +57,7 @@ console.log('error ', error)
 function updateScreen(user){
     $(".nome_profissional").html(user.name)
     $(".profissao_profissional").html(user.work)
-    $("#rating_avarage_num").html(user.ratingAverage ||0)
+    // $("#rating_avarage_num").html(user.ratingAverage ||0)
     if( user.profilePicture)
         $("#profissional_imagem").attr("src", user.profilePicture.link );
     // $(".descricao_profissional").html(user.description.substring(0, 50))
