@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Páginas Verdes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
+
   <body class="body align-items-center d-flex" id="body">
     <div class="container rounded-2" id="containerPrincipal">
       <div class="p-5">
@@ -45,6 +48,20 @@
           <p class="cadastrar">
             <a href="esqueceuSenha.html" id="corSenha">Esqueceu a senha?</a>
           </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login Bem-Sucedido!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Bem-vindo ao Páginas Verdes, <span id="modalUserName"></span>! <i class="bi bi-check"></i></p>
+          </div>
         </div>
       </div>
     </div>
@@ -88,12 +105,8 @@
         login_user(username, password)
           .then((user) => {
             setUser(user);
-            showToast(
-              "Login bem sucedido!",
-              `Bem vindo, ${user.name}!`,
-              "success",
-              "bi bi-check-circle-fill"
-            );
+            $("#modalUserName").text(user.name);
+            $("#loginModal").modal("show");
 
             setTimeout(() => {
               window.location.href = "./homescreen.html";

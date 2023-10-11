@@ -29,6 +29,11 @@ label {
   color: #807f7f;
 }
 
+i{
+  color: #237040;
+  font-size: 28px;
+}
+
 a {
   text-decoration: none;
   color: #259753;
