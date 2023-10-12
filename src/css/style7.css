@@ -124,14 +124,15 @@ i.bi.bi-person.icone::before {
   font-size: large;
   background-color: #259753;
   color: #ffffff;
+  text-align: justify;
   border-radius: 8px;
-  width: 780px;
+  width: 700px;
 }
 
 .container_1 .botao {
   background-color: #ffffff;
   color: #86aa95;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .container_1 .botao:hover {

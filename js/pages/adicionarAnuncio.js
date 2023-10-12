@@ -100,12 +100,12 @@ function save(){
     post('serviceOffering/save', anuncio, $('#files').prop('files')).then(success => {
         console.log('success', success);
 
-        showToast(
-            "Salvo com sucesso!",
-            `Anúncio ${success.name} salvo com sucesso`,
-            "success",
-            "bi bi-check-circle-fill"
-        );
+        $("#loginModal").modal("show");
+
+        setTimeout(() => {
+          window.location.href = 'homescreen.html'
+      }, 4000)
+
     }).catch(error => {
         console.log('erro ', error)
         showToast("Erro ao salvar", error, "danger", "bi bi-bug-fill");

@@ -30,13 +30,13 @@ i {
 
 .botao {
   background-color: #ffffff;
-  color: #4fa387;
+  color: #259753;
   font-weight: 800;
 }
 
 .botao:hover {
-  background-color: #e9e6f5;
-  color: #4fa387;
+  background-color: #f4f2f8;
+  color: #2baa5e;
 }
 
 .inputs_border:focus {

@@ -39,16 +39,11 @@ function cadastrar(){
             post('user/update', user).then(updated_user=>{
                 toggleLoader(false)
 
-                showToast(
-                    "Salvo com sucesso!",
-                    `Bem vindo ao páginas verdes, ${updated_user.name}!`,
-                    "success",
-                    "bi bi-check-circle-fill"
-                );
+                $("#loginModal").modal("show");
 
                 setTimeout(() => {
                     window.location.href = 'index.html'
-                }, 3000)
+                }, 2000)
 
             }).catch(err=>{
                 showToast("Erro ao salvar", err, "danger", "bi bi-bug-fill");

@@ -36,10 +36,6 @@ label {
   color: #ffffff;
 }
 
-.row_pic{
-  align-items: flex-end;
-}
-
 .botao:hover {
   background-color: #32c56d;
   color: #ffffff;
@@ -58,6 +54,10 @@ label {
   border: 1px solid #ffffff !important;
   background-color: #00008B !important;
   box-shadow: 0 0 0 0;
+}
+
+.title_center{
+  padding-left: 120px;
 }
 
 .form {
@@ -89,17 +89,16 @@ label {
 }
 
 .profile_picture_upload {
-  border: 2px dashed #ccc;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   text-align: center;
-  padding: 5px;
   cursor: pointer;
-  max-width: 200px;
-  /* max-height: 100px; */
+  max-width: 100px;
+  max-height: 100px;
 }
+
 #imagePreview {
-  max-width: 100%;
-  max-height: 200px;
-  /* margin-top: 10px; */
+  max-height: 100px;
 }
 
 .container_cadastro{

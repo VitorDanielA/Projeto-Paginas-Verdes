@@ -22,12 +22,14 @@ get('serviceOffering/all').then(serviceOfferings=>{
   toggleLoader(false)
 })
 
+
 const modoDaltonismoAtivado = localStorage.getItem('daltonismo');
 const navBar = document.getElementById("nav_cor");
 const footer = document.getElementById("footer");
 const enviar = document.getElementById("enviar");
 const search_input = document.getElementById("searchInput");
 const search_input2 = document.getElementById("searchInput2");
+const procurar = document.getElementById("procurar");
 
 if(modoDaltonismoAtivado === 'ativado'){
   navBar.classList.add("corPadrao");
@@ -35,6 +37,7 @@ if(modoDaltonismoAtivado === 'ativado'){
   enviar.classList.add("corBotao");
   search_input.classList.add("searchInputDaltonismo");
   search_input2.classList.add("searchInputDaltonismo");
+  procurar.classList.add("corBotao");
 }
 
 
@@ -95,7 +98,7 @@ function criarDivProissional(serviceOffering, i, el){
                 <br />
                 <a
                   href="contrato.html?id=${serviceOffering.worker.id}"
-                  class="btn mt-3 botao"
+                  class="btn mt-3 botao botao_perfil"
                   style="flex-wrap: wrap"
                   ><i class="bi bi-person-fill icone nome_navbar"></i> Perfil</a
                 >
@@ -103,6 +106,16 @@ function criarDivProissional(serviceOffering, i, el){
                 
               </div>
             </div>
+
+            <script>
+
+            if(modoDaltonismoAtivado === 'ativado'){
+              $(document).ready(function() {
+                $('.botao_perfil').addClass('corBotao');
+              });
+            }
+            
+            </script>
             `
     )
 

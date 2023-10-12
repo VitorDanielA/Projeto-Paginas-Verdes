@@ -9,22 +9,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
   </head>
   <body class="body align-items-center d-flex" id="body">
     <div class="container rounded-2" id="containerPrincipal">
       <div class="form">
-        <div>
-          <h2 class="text-center" id="textoCadastro">Cadastro de usuário</h2>
-          <p class="text-center">Realize aqui o seu cadastro de usuário prestador de serviços na nossa plataforma.</p>
+        <div class="">
+          <div class="d-flex justify-content-between my-2">
+            <div>
+              <span></span>
+            </div>
+            <div class="title_center">
+              <h2 class="text-center" id="textoCadastro">Cadastro de usuário</h2>
+              <p class="text-center">Realize aqui o seu cadastro de usuário prestador de serviços na nossa plataforma.</p>
+            </div>
+            <div class="profile_picture_upload">
+              <p id="pictureInstructive">Selecione uma foto</p>
+              <input type="file" id="uploadInput" accept="image/*" style="display: none;">
+            </div>
+          </div> 
         </div>
-        <div class="row row_pic">
-          <div class="col-md-6   profile_picture_upload">
-            <p id="pictureInstructive">Selecione uma foto</p>
-            <input type="file" id="uploadInput" accept="image/*" style="display: none;">
-          </div>
+        <div class="row">
           <div class="col">
             <label class="">Nome Completo</label>
             <input type="text" name="nome_completo" class="form-control inputs_border" placeholder="Digite seu nome completo" />
@@ -108,7 +115,7 @@
           </div>
         </div>
 
-        <div class="form-check my-2">
+        <div class="form-check my-3">
           <input class="form-check-input bg-roxo" type="checkbox" value="" id="flexCheckChecked" name="aceite_termos" checked />
           <label class="form-check-label" for="flexCheckChecked">Eu concordo com os termos de uso</label>
         </div>
@@ -145,6 +152,20 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn botao" data-bs-dismiss="modal" id="btnFecharModal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="exampleModalLabel">Parabéns! A criação de conta foi bem-sucedida!</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="fs-5"><i class="bi bi-check-circle-fill text-success fs-2 me-2"></i> Retornando a tela de Login</p>
           </div>
         </div>
       </div>

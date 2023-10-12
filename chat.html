@@ -26,7 +26,7 @@
 
 
 </head>
-<body>
+<body id="body_chat">
       <nav class="navbar navbar-expand-lg nav_cor p-3" id="nav_cor">
         <div class="container-fluid">
           <a class="navbar-brand title-padding" href="homescreen.html"
@@ -63,13 +63,12 @@
         </div>
       </nav>
 
-      <div class="container" style="background-color: #f3f3f3; padding: 20px;">
+      <div class="container" style="padding: 20px;" id="container_chat">
         <audio id="audioElement" src="./assets/message.mp3"></audio>
         <h1 class="text-center mt-5" style="color: #259753;" id="corTexto">Chat Páginas Verdes</h1>
           
         <div id="chat_pv">
           <div id="toggleContacts" class="btn btn-primary my-2"  style="background-color: #4fa387;">
-              Contatos
 
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
                 <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
@@ -79,11 +78,11 @@
           </div>
           <div class="chat_div" >
             
-              <div class="col-md-3 contacts">
+              <div class="col-md-3 contacts" style="box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);">
                   <!-- Início da seção de contatos -->
                     
-                  <h3 style="color: #259753;" id="corTexto">Recentes</h3>
-                  <div class="contacts-list" id="contacts-list">
+                  <h3 style="color: #259753;" id="corTexto" class="ps-2">Recentes</h3>
+                  <div class="contacts-list ps-2" id="contacts-list">
                       <!-- Contato 1 - Em Chat (Destaque) -->
                       <!-- <div class="contact" style="background-color: #4fa387; color: #fff; border-radius: 5px; padding: 5px;">
                           <img src="./assets/pexels-andrea-piacquadio-3779705.jpg" alt="Joan Rodrigues" class="rounded-circle" width="50px" style="border: 2px solid #fff;">
@@ -97,12 +96,12 @@
                   </div>
                   <!-- Fim da seção de contatos -->
               </div>
-              <div class="col-md-9 col-lg-12 chat-content " >
+              <div class="col-md-9 col-lg-12 chat-content ms-2" >
                   <div class="text-center mb-3 chat-content-contact" id="takler_image">
                           <div class="chat-content-contact-pic">
                               <img src="./assets/pexels-andrea-piacquadio-3779705.jpg" alt="Joan Rodrigues" class="rounded-circle" width="50px" height="50px" style="border: 2px solid #fff;object-fit: cover;" >
                           </div>
-                          <span class="chat-content-contact-name" id="talker_name">Joan Rodrigues</span>
+                          <span class="chat-content-contact-name" id="talker_name" style="color: #f3f3f3;">Joan Rodrigues</span>
                   </div>
                   <div class="chat-box" >
                     
