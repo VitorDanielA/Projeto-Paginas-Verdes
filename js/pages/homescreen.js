@@ -2,9 +2,8 @@
 
 const atualizacoes = $('.atualizacoes')
 
-toggleLoader(true, '.atualizacoes')
+toggleLoader(true)
 atualizacoes.html('')
-
 get('serviceOffering/all').then(serviceOfferings=>{
 
     atualizacoes.html('')
@@ -12,6 +11,9 @@ get('serviceOffering/all').then(serviceOfferings=>{
     serviceOfferings.forEach((serviceOffering, index) => {
         criarDivProissional(serviceOffering, index, atualizacoes)
     });
+    if(serviceOfferings.length <= 0){
+      atualizacoes.append('<p>Nada encontrado</p>')
+    }
 
 }).catch(error=>{
     showToast("Erro ao buscar!", error, "danger", "bi bi-bug-fill");
@@ -52,6 +54,7 @@ function criarDivProissional(serviceOffering, i, el){
                   <strong class="d-block text-gray-dark ">${serviceOffering.worker.name}</strong>
                   <strong class="d-block text-gray-dark ">${serviceOffering.name}</strong>
                   <strong class="d-block text-gray-dark ">${serviceOffering.worker.work}</strong>
+                  <strong class="d-block text-gray-dark ">Preço ${formatReal(serviceOffering.price)}</strong>
                 </div>
                 
               </div>
@@ -146,4 +149,67 @@ function criarDivProissional(serviceOffering, i, el){
         
         `
     )
+}
+
+$('#procurar').on('click', ()=>{
+  updateByFilter()
+})
+$('#price_filter').on('change', ()=>{
+  updateByFilter()
+})
+$('#rating_filter').on('change', ()=>{
+  updateByFilter()
+})
+$('#rating_filter').on('category_filter', ()=>{
+  updateByFilter()
+})
+
+function updateByFilter(){
+  let maxprice="all"
+  let minrating="all"
+  let category="all"
+  let city="all"
+  let work="all"
+
+  maxprice=$('#price_filter').val()
+  minrating=$('#rating_filter').val()
+  category=$('#category_filter').val()
+  city=$('#searchInput2').val() ? $('#searchInput2').val() : 'all'
+  work=$('#searchInput').val() ? $('#searchInput').val() : 'all'
+  
+  // serviceOffering/filter?maxprice=all&minrating=all&category=all&city=all&work=all
+
+  toggleLoader(true)
+  atualizacoes.html('')
+  get('serviceOffering/filter?maxprice='+maxprice+'&minrating='+minrating+'&category='+category+'&city='+city+'&work='+work).then(serviceOfferings=>{
+      atualizacoes.html('')      
+      serviceOfferings.forEach((serviceOffering, index) => {
+          criarDivProissional(serviceOffering, index, atualizacoes)
+      });
+
+      if(serviceOfferings.length <= 0){
+        atualizacoes.append('<p>Nada encontrado</p>')
+      }
+
+  }).catch(error=>{
+      showToast("Erro ao buscar!", error, "danger", "bi bi-bug-fill");
+
+  }).finally(()=>{
+    toggleLoader(false)
+  })
+}
+
+function formatReal(numero) {
+  // Verifica se o número é um número válido
+  if (isNaN(numero)) {
+    return "Número inválido";
+  }
+
+  // Formata o número como um valor monetário com 2 casas decimais
+  const valorFormatado = numero.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  });
+
+  return valorFormatado;
 }
