@@ -102,7 +102,13 @@ function criarDivProissional(serviceOffering, i, el){
                   style="flex-wrap: wrap"
                   ><i class="bi bi-person-fill icone nome_navbar"></i> Perfil</a
                 >
-              </p>
+                <a
+                  href="denunciarAnuncio.html"
+                  class="btn mt-3 botao botao_perfil"
+                  style="flex-wrap: wrap"
+                  ><i class="bi bi-flag icone nome_navbar mb-2"></i> Reportar</a
+                >
+                </p>
                 
               </div>
             </div>
