@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/ico.ico" type="image/x-icon" />
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg nav_cor p-3" id="nav_cor">
       <div class="container-fluid">
         <a class="nome"><strong></strong></a>
-        <a class="navbar-brand title-padding" href="#">
+        <a class="navbar-brand title-padding" href="homescreen.html">
           <strong class="strong_title">Páginas Verdes</strong>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,6 +56,7 @@
               </ul>
             </li>
           </ul>
+          
         </div>
       </div>
     </nav>
@@ -81,7 +82,7 @@
         </div>
 
         <div class="mt-5">
-          <button class="btn botao_form" type="submit" id="enviar">Procurar</button>
+          <button class="btn botao_form" id="procurar">Procurar</button>
         </div>
       </div>
     </div>
@@ -94,39 +95,41 @@
                   <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
                     <div class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"> 
                       <label for="exampleSelect" class="form-label">Preço</label>   
-                      <select class="form-select">
-                        <option>Até 100$</option>
-                        <option>Até 200$</option>
-                        <option>Até 500$</option>
-                        <option>Até 1000$</option>
-                        <option>Ilimitado</option>
+                      <select class="form-select" id="price_filter">
+                        <option value="all">Ilimitado</option>
+                        <option value="100">Até R$100,00</option>
+                        <option value="200">Até R$200,00</option>
+                        <option value="500">Até R$500,00</option>
+                        <option value="1000">Até R$1000,00</option>
                       </select> 
                     </div>
 
                     <div class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar">
                       <label for="exampleSelect" class="form-label">Avaliações</label>   
-                      <select class="form-select">
-                        <option>★ 1</option>
-                        <option>★ 2</option>
-                        <option>★ 3</option>
-                        <option>★ 4</option>
-                        <option>★ 5</option>
+                      <select class="form-select" id="rating_filter">
+                        <option value="all">Tudo</option>
+                        <option value="1">★ 1</option>
+                        <option value="2">★ 2</option>
+                        <option value="3">★ 3</option>
+                        <option value="4">★ 4</option>
+                        <option value="5">★ 5</option>
                       </select> 
                     </div>
 
                     <div class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar">
                       <label for="exampleSelect" class="form-label">Categoria</label>
-                        <select class="form-select">
-                          <option value="1">Tecnologia da Informação</option>
-                          <option value="2">Saúde</option>
-                          <option value="3">Educação</option>
-                          <option value="4">Marketing</option>
-                          <option value="5">Domésticos</option>
-                          <option value="6">Arte e Design</option>
-                          <option value="7">Consultoria</option>
-                          <option value="8">Alimentação</option>
-                          <option value="9">Construção</option>
-                          <option value="10">Esportes</option>
+                        <select class="form-select" id="category_filter">
+                          <option value="all">Todas</option>
+                          <option value="Tecnologia da Informação">Tecnologia da Informação</option>
+                          <option value="Saúde">Saúde</option>
+                          <option value="Educação">Educação</option>
+                          <option value="Marketing">Marketing</option>
+                          <option value="Domésticos">Domésticos</option>
+                          <option value="Arte e Design">Arte e Design</option>
+                          <option value="Consultoria">Consultoria</option>
+                          <option value="Alimentação">Alimentação</option>
+                          <option value="Construção">Construção</option>
+                          <option value="Esportes">Esportes</option>
                         </select>
                     </div>                       
                   </div>
@@ -271,7 +274,7 @@
                                 garantindo que meus clientes tenham suas necessidades atendidas de
                                 maneira eficiente e confiável. 
                               <br />
-                              <a href="contrato.html" class="btn mt-2 botao botao_perfil" style="flex-wrap: wrap">
+                              <a href="contrato.html" class="btn mt-2 botao" style="flex-wrap: wrap">
                                 <i class="bi bi-person-fill icone nome_navbar"></i> Perfil
                               </a>
                             </p>
@@ -315,7 +318,7 @@
     <script src="./js/pages/homescreen.js"></script>
 
     <script src="./js/navbar.js"></script>
-    <script>
+    <!-- <script>
       // Atualizar o valor do input range conforme o usuário move a faixa
       const rangeInput = document.getElementById('customRange');
       const rangeValue = document.getElementById('rangeValue');
@@ -326,6 +329,6 @@
 
       
       createStar({func:()=>{}, elId:"rating_test", starSize:20, starColor:'orange', starNumber:5, edit:true, value:4.6})
-  </script>
+    </script> -->
   </body>
 </html>
