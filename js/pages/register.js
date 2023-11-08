@@ -29,7 +29,7 @@ function cadastrar(){
 
     console.log('user ', newUser)
 
-    toggleLoader(true)
+    //toggleLoader(true)
     post('user/save', newUser).then(user=>{
         console.log('Success ', user)
 

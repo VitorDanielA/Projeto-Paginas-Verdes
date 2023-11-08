@@ -27,7 +27,7 @@ $('#avaliar_btn').on('click', ()=>{
 
         showToast(
             "Salvo com sucesso!",
-            `Anúncio ${saved.name} salvo com sucesso`,
+            `Anúncio salvo com sucesso`,
             "success",
             "bi bi-check-circle-fill"
         );
